@@ -1,2 +1,20 @@
 /** generic **/
 @import "./generic/base.scss";
+@import "./generic/box-sizing.scss";
+
+/** Objects **/
+@import "./objects/container.scss";
+
+/** utility **/
+@import "./utility/background.scss";
+@import "./utility/color.scss";
+@import "./utility/flex.scss";
+@import "./utility/font-size.scss";
+@import "./utility/margin.scss";
+@import "./utility/padding.scss";
+@import "./utility/border.scss";
+
+/** Components **/
+
+@import "../components/header/header.scss";
+@import "../components/about-me/about-me.scss";
