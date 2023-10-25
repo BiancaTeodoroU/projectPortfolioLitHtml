@@ -10,8 +10,8 @@
   },
   "scripts": {
     "dev": "parcel ./front-end/src/views/index.pug",
-    "devopen": "parcel src/index.pug --open 'google chrome'",
-    "build": "parcel build src/index.pug"
+    "devopen": "parcel ./front-end/src/views/index.pug --open 'google chrome'",
+    "build": "parcel build ./front-end/src/views/index.pug"
   },
   "repository": {
     "type": "git",
