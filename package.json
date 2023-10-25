@@ -2,15 +2,16 @@
   "name": "projectportfoliolit",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
   "dependencies": {
-    "express": "^4.18.2",
     "pug": "^3.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "sass": "^1.69.4"
+  },
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel ./front-end/src/views/index.pug",
+    "devopen": "parcel src/index.pug --open 'google chrome'",
+    "build": "parcel build src/index.pug"
   },
   "repository": {
     "type": "git",

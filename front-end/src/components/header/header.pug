@@ -1,0 +1,13 @@
+mixin header(props = {})
+    -
+        let state = {
+            title: props.title,
+            description: props.description
+        }
+
+    
+    h1 
+        =state.title 
+    
+    p 
+        =state.description
