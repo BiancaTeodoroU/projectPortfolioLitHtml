@@ -1,6 +1,7 @@
 /** generic **/
 @import "./generic/base.scss";
 @import "./generic/box-sizing.scss";
+@import "./generic/mediaquerys.scss";
 
 /** Objects **/
 @import "./objects/container.scss";
@@ -10,11 +11,15 @@
 @import "./utility/color.scss";
 @import "./utility/flex.scss";
 @import "./utility/font-size.scss";
+@import "./utility/font-weight.scss";
 @import "./utility/margin.scss";
 @import "./utility/padding.scss";
+@import "./utility/width.scss";
+@import "./utility/height.scss";
+@import "./utility/uppercase.scss";
 @import "./utility/border.scss";
 
 /** Components **/
-
 @import "../components/header/header.scss";
 @import "../components/about-me/about-me.scss";
+@import "../components/guide/guide.scss";

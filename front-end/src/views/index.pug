@@ -9,8 +9,15 @@ html(lang="pt-BR")
         link(rel="stylesheet" href="../styles/main.scss")
     body
         +header({
-            title: 'oii',
-            description: 'testando',
+            title: 'Front',
+            subtitle: 'Bia',
         })
 
+        +guide({ title: 'Título Dinâmico', icon: 'code' }, [
+            { title: 'Item 1', icon: 'bulb' },
+            { title: 'Item 2', icon: 'code' },
+            { title: 'Item 3', icon: 'service' },
+            { title: 'Item 4', icon: 'user' },
+            { title: 'Item 5', icon: 'phone' }
+        ])
     script(src="../javascript/index.js")

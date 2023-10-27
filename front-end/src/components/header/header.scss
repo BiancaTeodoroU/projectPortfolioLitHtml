@@ -1,0 +1,10 @@
+:root {
+    --background: #1A1B28;
+    --padding: 1.625rem;
+}
+
+.c-header {
+    background: var(--background);
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+}

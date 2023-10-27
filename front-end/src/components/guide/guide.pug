@@ -1,0 +1,25 @@
+mixin guide(props, items)
+    - 
+        let state = {
+            title: props.title || 'Sobre mim',
+            icon: props.icon || 'user',
+        }
+
+    nav(class="c-guide")
+        ul(class="u-flex u-align-center")
+            each item in items
+                li(class="lista-logo mb-2")
+                    .o-icon
+                        case item.icon
+                            when 'bulb'
+                                include ./src/svg/bulb.svg
+                            when 'code'
+                                include ./src/svg/code.svg 
+                            when 'service'
+                                include ./src/svg/service.svg 
+                            when 'user'
+                                include ./src/svg/user.svg 
+                            when 'phone'
+                                include ./src/svg/phone.svg
+                    span 
+                        =item.title
