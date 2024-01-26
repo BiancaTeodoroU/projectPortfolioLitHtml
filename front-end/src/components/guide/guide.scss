@@ -13,5 +13,113 @@
 	-webkit-transform: translateZ(0) scale(1,1);
 	transform: translateZ(0) scale(1,1);
 
-    z-index: 900;
+    z-index: -1;
+
+	&:hover {
+		color: #fff;
+		background-color: #282828;
+		width: 250px;
+		overflow: hidden;
+	}
+
+	&__item {
+		text-transform: capitalize;
+	}
+
+	&__icon {
+		padding-right: 0.625rem;
+		color: #6842FF;
+		font-size: 1.3rem;
+		width: 3.8rem;
+		vertical-align: sub;
+	}
+
+	&__list {
+		margin: 100px 0;
+	}
+	
+	&__item {
+		position: relative;
+		width: 255px;
+		color: #6842FF;
+		display: table;
+		font-size: 16px;
+		text-decoration: none;
+		transform: translateZ(0) scale(1, 1);
+		transition: all 0.15s linear;
+	}
+
+	&__titleIcon {
+		color: #6842FF;
+		display: block;
+		width: 100%;
+		line-height: 3.2rem;
+		text-decoration: none;
+		padding-left: 2.2rem;
+		box-sizing: border-box;
+		transition: 0.5s;
+		transition-property: background;
+		font-weight: 500;
+	}
+}
+
+.lista-logo, .li-empresa, .li-contato {
+	text-transform: capitalize;
+}
+
+.menu li:hover a, section.menu li.active > a {
+	color: #fff;
+	background-color: #282828;
+}
+
+.menu ion-icon {
+    padding-right: 0.625rem;
+    color: #6842FF;
+    font-size: 1.3rem;
+    width: 3.8rem;
+    vertical-align: sub;
+}
+
+.menu:hover, section.menu.expanded {
+	width: 250px;
+	overflow: hidden;
+}
+
+.menu h3 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.menu > ul {
+	margin: 100px 0;
+}
+
+.menu li > a {
+	position: relative;
+	width: 255px;
+	color: #6842FF;
+	display: table;
+	font-size: 16px;
+	text-decoration: none;
+	-webkit-transform: translateZ(0) scale(1,1);
+	transform: translateZ(0) scale(1,1);
+	-webkit-transition: all 0.15s linear;
+	transition: all 0.15s linear;
+}
+
+.menu .span-menu {
+	color: #6842FF;
+    display: block;
+    width: 100%;
+    line-height: 3.2rem;
+    text-decoration: none;
+    padding-left: 2.2rem;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background;
+    font-weight: 500;
 }

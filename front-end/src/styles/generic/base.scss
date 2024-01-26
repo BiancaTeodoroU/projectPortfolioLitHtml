@@ -6,11 +6,17 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: var(--black-body);
+    //- background: var(--black-body);
     overflow-x: hidden !important;
 }
 
 :root {
     /*=== Background ===*/
     --black-body: #0C0D14;
+}
+
+.o-container {
+    max-width: 768px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }

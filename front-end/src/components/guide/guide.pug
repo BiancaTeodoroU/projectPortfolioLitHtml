@@ -6,20 +6,23 @@ mixin guide(props, items)
         }
 
     nav(class="c-guide")
-        ul(class="u-flex u-align-center")
+        ul(class="c-guide__list")
             each item in items
-                li(class="lista-logo mb-2")
-                    .o-icon
-                        case item.icon
-                            when 'bulb'
-                                include ./src/svg/bulb.svg
-                            when 'code'
-                                include ./src/svg/code.svg 
-                            when 'service'
-                                include ./src/svg/service.svg 
-                            when 'user'
-                                include ./src/svg/user.svg 
-                            when 'phone'
-                                include ./src/svg/phone.svg
-                    span 
-                        =item.title
+                li(class="c-guide__item")
+                    a(href=`#${item.link}`)
+                        .c-guide__icon
+                            .o-icon
+                                case item.icon
+                                    when 'bulb'
+                                        include ./src/svg/bulb.svg
+                                    when 'code'
+                                        include ./src/svg/code.svg 
+                                    when 'service'
+                                        include ./src/svg/service.svg 
+                                    when 'user'
+                                        include ./src/svg/user.svg 
+                                    when 'phone'
+                                        include ./src/svg/phone.svg
+                            
+                            span(class="c-guide__titleIcon")
+                                = item.title
