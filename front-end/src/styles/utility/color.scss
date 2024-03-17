@@ -3,6 +3,10 @@
     --first-color: #ef32d9;
     --color-pink: #fd3675;
     --second-color: #89fffd;
+    --white: #DEDEEA; 
+    --dark-blue-100: #348bee;
+    --dark-blue-200: #372dc9;
+    --dark-blue-300: #2C2081;
 }
 
 .u-color-pink {
@@ -10,5 +14,17 @@
 }
 
 .u-color-white {
-    color: #ffff;
+    color: var(--white);
+}
+
+.u-color-dark-blue-100 {
+    color: var(--dark-blue-100);
+}
+
+.u-color-dark-blue-200 {
+    color: var(--dark-blue-200);
+}
+
+.u-color-dark-blue-300 {
+    color: var(--dark-blue-300);
 }

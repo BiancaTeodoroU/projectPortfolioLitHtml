@@ -1,10 +1,16 @@
 mixin cat(props={})
 
     .c-cat 
+        //- gato com a caixa
+
         .c-cat__box 
         .c-cat__box-2
-        .c-cat__box-cover
-        .c-cat__box-shadow
+        .c-cat__box-cover-left
+        .c-cat__box-cover-left-2
+        .c-cat__box-cover-left-3
+        .c-cat__box-cover-right
+        .c-cat__box-cover-right-2
+        .c-cat__box-cover-right-3
         .c-cat__box-heart
         .c-cat__left 
         .c-cat__right
@@ -18,3 +24,9 @@ mixin cat(props={})
         .c-cat__eye-left
         .c-cat__eye-right
         .c-cat__nose
+
+        //- enfeite da parte de fora do gato
+        .c-cat__heart
+            .c-cat__heart-icon 
+                include ./src/svg/heart-white.svg
+        .c-cat__heart-detail

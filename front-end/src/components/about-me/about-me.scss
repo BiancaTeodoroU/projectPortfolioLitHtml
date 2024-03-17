@@ -1,0 +1,11 @@
+.c-about-me {
+    &__content {
+        max-width: 31.25rem;
+    }
+
+    &__image {
+        width: 28.125rem;
+        height: 28.125rem;
+        object-fit: cover;
+    }
+}

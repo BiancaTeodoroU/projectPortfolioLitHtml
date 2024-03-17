@@ -1,0 +1,27 @@
+mixin skills(props = {})
+    -
+        let state = {
+            items: props.items || [],
+            title: props.title
+        }
+    
+    .c-skills(class="u-flex")
+        each item, index in state.items
+            ul(
+                class="c-skills__list-card u-flex u-justify-center u-align-center u-text-center u-m-0 u-pd-0 u-border-16"
+                class={ 'u-mr-14' : index === 0 }
+                class={ 'u-ml-14' : index + 1 === state.items.length }
+            )
+                li(class="c-skills__list-item u-background-pink u-flex u-align-center u-flex-column")
+                    .c-skills__icon
+                        case item.icon
+                            when 'users'
+                                include ./src/svg/users.svg
+                            when 'rocket'
+                                include ./src/svg/rocket.svg 
+                            when 'graduation'
+                                include ./src/svg/graduation.svg 
+                    
+                    span(class="u-color-white") 
+                        =item.title    
+            

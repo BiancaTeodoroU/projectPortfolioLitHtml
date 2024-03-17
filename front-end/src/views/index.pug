@@ -8,12 +8,20 @@ html(lang="pt-BR")
 
         link(rel="stylesheet" href="../styles/main.scss")
     body
-        .o-container(class="u-mt-40")
-            //- +header({
-            //-     title: 'Front',
-            //-     subtitle: 'Bia',
-            //- })
-
+        +header({
+            title: 'Front',
+            subtitle: 'Bia',
+        })
+        main 
+            h2(class="u-m-0 u-fs-32 u-color-pink u-font-weight-800 u-mb-24 u-text-center")
+                | Sobre mim 
+                    
+            +about-me({
+                title: 'Hello, I am Bianca Teodoro Urtado,',
+                description: '20 anos, residente em Presidente Prudente - SP. Cursando Análise e Desenvolvimento de Sistemas na Instituição Universitária de Toledo Prudente e buscando me especializar em desenvolvimento front-end. Gosto de desafios e busco sempre me atualizar sobre novas tecnologias.',
+                imageUrl: '../images/bianca.png'
+            })
+            
             //- +guide({ title: 'Título Dinâmico', icon: 'code', link: 'item0' }, [
             //-     { title: 'Item 1', icon: 'bulb', link: 'item1' },
             //-     { title: 'Item 2', icon: 'code', link: 'item2' },
@@ -22,5 +30,7 @@ html(lang="pt-BR")
             //-     { title: 'Item 5', icon: 'phone', link: 'item5' }
             //- ])
         
-            +cat({})
-    script(src="../javascript/index.js")
+            .o-container(class="u-mt-40")
+                //- +cat({})
+                //- +carrousel()
+        script(src="../javascript/index.js")
