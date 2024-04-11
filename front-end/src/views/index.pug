@@ -11,17 +11,53 @@ html(lang="pt-BR")
         +header({
             title: 'Front',
             subtitle: 'Bia',
+        })  
+
+        +navigation({
+            items: [{
+                icon: 'user',
+                link: 'about-me',
+                name: 'Sobre mim'
+            },
+            {
+                icon: 'service',
+                link: 'item2',
+                name: 'Serviços'
+            },
+            {
+                icon: 'code',
+                link: 'item1',
+                name: 'Projetos'
+            },
+            {
+                icon: 'bulb',
+                link: 'item0',
+                name: 'Conhecimentos'
+            },
+            {
+                icon: 'knowledge',
+                link: 'item5',
+                name: 'Qualificações'
+            },
+            {   
+                icon: 'phone',
+                link: 'item4',
+                name: 'Contato'
+            }]
         })
+
         main 
-            h2(class="u-m-0 u-fs-32 u-color-pink u-font-weight-800 u-mb-24 u-text-center")
-                | Sobre mim 
-                    
-            +about-me({
-                title: 'Hello, I am Bianca Teodoro Urtado,',
-                description: '20 anos, residente em Presidente Prudente - SP. Cursando Análise e Desenvolvimento de Sistemas na Instituição Universitária de Toledo Prudente e buscando me especializar em desenvolvimento front-end. Gosto de desafios e busco sempre me atualizar sobre novas tecnologias.',
-                imageUrl: '../images/bianca.png'
-            })
+            section(class="u-mb-24" id="about-me")
+                +about-me({
+                    title: 'Hello, I am Bianca Teodoro Urtado,',
+                    description: 'Tenho 21 anos e sou residente em Presidente Prudente - SP. Sou formada em Análise e Desenvolvimento de Sistemas pela Instituição Toledo Prudente e trabalho como desenvolvedora front-end. Gosto de desafios e estou sempre buscando me atualizar sobre novas tecnologias.',
+                    imageUrl: '../images/bianca.png'
+                })
             
+                //- +history({
+                //-     imageUrl: '../images/acai.jpeg'
+                //- })  
+                
             //- +guide({ title: 'Título Dinâmico', icon: 'code', link: 'item0' }, [
             //-     { title: 'Item 1', icon: 'bulb', link: 'item1' },
             //-     { title: 'Item 2', icon: 'code', link: 'item2' },
@@ -29,7 +65,8 @@ html(lang="pt-BR")
             //-     { title: 'Item 4', icon: 'user', link: 'item4' },
             //-     { title: 'Item 5', icon: 'phone', link: 'item5' }
             //- ])
-        
+            
+
             .o-container(class="u-mt-40")
                 //- +cat({})
                 //- +carrousel()

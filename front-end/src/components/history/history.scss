@@ -1,0 +1,10 @@
+.c-history {
+    position: absolute;
+    bottom: 0;
+
+    &__image {
+        width: 10rem;
+        height: 10rem;
+        object-fit: cover;
+    }
+}

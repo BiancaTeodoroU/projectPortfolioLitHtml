@@ -8,6 +8,10 @@ mixin about-me(props = {})
     
     .c-about-me(class="u-flex u-justify-around u-align-center")
         .c-about-me__content
+            .c-about-me__section 
+                h2(class="u-m-0 u-fs-32 u-color-pink u-font-weight-800 u-mb-24 u-text-start")
+                    | Sobre mim 
+
             .u-mb-24
                 h3(class="u-mb-16 u-m-0 u-fs-24 u-fs-18@md u-font-weight-700 u-color-dark-blue-100")
                     =state.title

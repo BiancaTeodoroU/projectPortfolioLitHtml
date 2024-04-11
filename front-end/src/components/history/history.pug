@@ -1,0 +1,9 @@
+mixin history(props = {})
+    -   
+        let state = {
+            imageUrl: props.imageUrl,
+        }
+
+    .c-history
+        .u-flex(class="u-justify-center u-align-center")
+            img(class="c-history__image" src=`${state.imageUrl}` alt="")

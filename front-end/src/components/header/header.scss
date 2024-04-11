@@ -4,6 +4,8 @@
 }
 
 .c-header {
+    position: fixed;
+    z-index: 1;
     background: var(--background);
     padding-top: var(--padding);
     padding-bottom: var(--padding);

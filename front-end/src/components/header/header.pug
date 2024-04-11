@@ -5,8 +5,8 @@ mixin header(props = {})
             subtitle: props.subtitle
         }
 
-    .c-header.u-w-100
-        .o-container.u-h-100.u-m-0
+    .c-header(class="u-w-100")
+        .o-container(class="u-h-100 u-m-0")
             h3(class="u-color-white u-fs-18 u-text-uppercase u-m-0")
                 =state.title
                 span(class="u-color-pink u-text-uppercase") 

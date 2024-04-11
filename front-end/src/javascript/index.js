@@ -1,3 +1,5 @@
+//- Carrousel
+
 const previousEl = document.getElementById('previous');
 const nextEl = document.getElementById('next');
 const sliderEl = document.getElementById('slider');

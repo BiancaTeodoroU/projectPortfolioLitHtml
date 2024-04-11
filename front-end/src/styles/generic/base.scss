@@ -1,3 +1,5 @@
+@import './mediaquerys.scss';
+
 html {
     font-size: 1rem;
     font-family: 'Red Hat Display', sans-serif;
@@ -11,10 +13,21 @@ body {
 }
 
 main {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-top: 8rem;
+
+    @include mediaquery(sm) {
+        padding-top: 8rem;
+        padding-bottom: 3rem;
+        padding-left: 4.5rem;
+        padding-right: 1.4rem;
+    }
+
+    @include mediaquery(lg) {
+        padding-top: 8rem;
+        padding-bottom: 3rem;
+        padding-left: 5.4rem;
+        padding-right: 5.4rem;
+    }
 }
 
 :root {

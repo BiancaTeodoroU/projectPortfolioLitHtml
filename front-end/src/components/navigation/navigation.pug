@@ -1,0 +1,38 @@
+mixin navigation(props = {})
+    - 
+        let state = {
+            items: props.items || []
+        }
+
+    .c-navigation
+        nav 
+            ul(class="c-navigation__list")
+                each item, index in state.items
+                    li(
+                        class="c-navigation__item u-pl-16"
+                        class={ 'u-pb-24' : index === 0 }
+                        class={ 'u-pt-24' : index + 1 === state.items.length }
+                        class={ 'u-pt-24' : index === 2 }
+                        class={ 'u-pt-24' : index === 3 }
+                        class={ 'u-pt-24' : index === 4 }
+                    )
+                        a(href=`#${item.link}`)
+                            .c-navigation__icon
+                                .o-icon
+                                    case item.icon
+                                        when 'bulb'
+                                            include ./src/svg/bulb.svg
+                                        when 'code'
+                                            include ./src/svg/code.svg 
+                                        when 'service'
+                                            include ./src/svg/service.svg 
+                                        when 'user'
+                                            include ./src/svg/user.svg 
+                                        when 'phone'
+                                            include ./src/svg/phone.svg
+                                        when 'knowledge'
+                                            include ./src/svg/knowledge.svg         
+                            
+                            .c-navigation__name
+                                span
+                                    =item.name
