@@ -4,9 +4,15 @@
 }
 
 .c-header {
-    position: fixed;
+    position: sticky;
+    top: 0;
     z-index: 1;
     background: var(--background);
-    padding-top: var(--padding);
-    padding-bottom: var(--padding);
+    padding: 1.5rem;
+    z-index: 99991;
+    
+    @include mediaquery(sm) {
+        padding-top: var(--padding);
+        padding-bottom: var(--padding);
+    }
 }

@@ -3,35 +3,34 @@ mixin about-me(props = {})
         let state = {
             title: props.title,
             description: props.description,
-            imageUrl: props.imageUrl
+            imageUrl: props.imageUrl,
+            skills: props.skills,
         }
     
-    .c-about-me(class="u-flex u-justify-around u-align-center")
+    .c-about-me(class="u-flex")&attributes(attributes)
         .c-about-me__content
-            .c-about-me__section 
-                h2(class="u-m-0 u-fs-32 u-color-pink u-font-weight-800 u-mb-24 u-text-start")
-                    | Sobre mim 
-
-            .u-mb-24
+            .u-mb-16
                 h3(class="u-mb-16 u-m-0 u-fs-24 u-fs-18@md u-font-weight-700 u-color-dark-blue-100")
                     =state.title
                 
-                span(class="u-lh u-fs-16 u-color-white u-mb-16 u-font-weight-400")
+                span(class="u-fs-16 u-color-white u-mb-16 u-font-weight-400")
                     =state.description
 
-            +skills({
-                items: [{
-                    icon: 'graduation',
-                    title: 'Vontade de aprender'
-                },
-                {
-                    icon: 'users',
-                    title: 'Gosto muito de trabalhar em equipe'
-                },
-                {
-                    icon: 'rocket',
-                    title: 'Proatividade para assumir novas responsabilidades'
-                }] 
-            })
-            
-        img(class="c-about-me__image" src=`${state.imageUrl}` alt="")
+            if state.skills
+                +skills({
+                    items: [{
+                        icon: 'graduation',
+                        title: 'Vontade de aprender'
+                    },
+                    {
+                        icon: 'users',
+                        title: 'Gosto muito de trabalhar em equipe'
+                    },
+                    {
+                        icon: 'rocket',
+                        title: 'Proatividade para assumir novas responsabilidades'
+                    }] 
+                })
+        
+        .c-about-me__image 
+            img(class="c-about-me__image" src=`${state.imageUrl}` alt="")

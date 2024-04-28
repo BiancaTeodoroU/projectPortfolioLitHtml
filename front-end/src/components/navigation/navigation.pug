@@ -4,20 +4,15 @@ mixin navigation(props = {})
             items: props.items || []
         }
 
-    .c-navigation
+    .c-navigation(class="u-pt-120")
         nav 
-            ul(class="c-navigation__list")
+            ul(class="c-navigation__list u-m-0")
                 each item, index in state.items
                     li(
-                        class="c-navigation__item u-pl-16"
-                        class={ 'u-pb-24' : index === 0 }
-                        class={ 'u-pt-24' : index + 1 === state.items.length }
-                        class={ 'u-pt-24' : index === 2 }
-                        class={ 'u-pt-24' : index === 3 }
-                        class={ 'u-pt-24' : index === 4 }
+                        class="c-navigation__item u-flex"
                     )
-                        a(href=`#${item.link}`)
-                            .c-navigation__icon
+                        a(class="c-navigation__content" href=`#${item.link}`)
+                            .c-navigation__icon(class="u-flex u-align-center u-m-16")
                                 .o-icon
                                     case item.icon
                                         when 'bulb'
@@ -36,3 +31,36 @@ mixin navigation(props = {})
                             .c-navigation__name
                                 span
                                     =item.name
+        
+mixin navigation-mobile(props = {})
+    - 
+        let state = {
+            items: props.items || []
+        }
+
+    nav(class="c-navigation--mobile")
+        ul(class="c-navigation--mobile__list")
+            each item, index in state.items
+                li(
+                    class="c-navigation--mobile__item"
+                )
+                    a(class="c-navigation--mobile__content" href=`#${item.link}`)
+                        .c-navigation--mobile__icon
+                            .o-icon
+                                case item.icon
+                                    when 'bulb'
+                                        include ./src/svg/bulb.svg
+                                    when 'code'
+                                        include ./src/svg/code.svg 
+                                    when 'service'
+                                        include ./src/svg/service.svg 
+                                    when 'user'
+                                        include ./src/svg/user.svg 
+                                    when 'phone'
+                                        include ./src/svg/phone.svg
+                                    when 'knowledge'
+                                        include ./src/svg/knowledge.svg         
+                        
+                        .c-navigation--mobile__name(class="u-fs-12")
+                            span
+                                =item.name

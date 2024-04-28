@@ -1,9 +1,10 @@
 mixin history(props = {})
     -   
         let state = {
-            imageUrl: props.imageUrl,
+            imageUrls: props.imageUrls || [],
         }
 
     .c-history
-        .u-flex(class="u-justify-center u-align-center")
-            img(class="c-history__image" src=`${state.imageUrl}` alt="")
+        each imageUrl in state.imageUrls
+            .c-history__card
+                img(class="c-history__image" src=`${imageUrl}` alt="")

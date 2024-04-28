@@ -18,6 +18,10 @@
     justify-content: end;
 }
 
+.u-justify-between {
+    justify-content: space-between;
+}
+
 .u-justify-around {
     justify-content: space-around;
 }
@@ -40,4 +44,48 @@
 
 .u-db {
     display: block;
+}
+
+.u-flex-wrap {
+    flex-wrap: wrap;
+}
+
+.o-row {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 1280px;
+    margin: 0 auto;
+
+    @include mediaquery(md) {
+        grid-gap: 14rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.o-col-6 {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.o-col-md-4 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+    @include mediaquery(md) {
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+    }
+}
+
+.u-order-1 {
+    order: 1;
+}
+
+.u-flex-auto-md {
+
+    @include mediaquery(md) {
+        flex: auto;
+    }
 }

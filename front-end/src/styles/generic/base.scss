@@ -12,31 +12,25 @@ body {
     overflow-x: hidden !important;
 }
 
-main {
-    padding-top: 8rem;
-
-    @include mediaquery(sm) {
-        padding-top: 8rem;
-        padding-bottom: 3rem;
-        padding-left: 4.5rem;
-        padding-right: 1.4rem;
-    }
-
-    @include mediaquery(lg) {
-        padding-top: 8rem;
-        padding-bottom: 3rem;
-        padding-left: 5.4rem;
-        padding-right: 5.4rem;
-    }
-}
-
 :root {
     /*=== Background ===*/
     --black-body: #0C0D14;
+}
+
+main {
+    display: flex;
+    
 }
 
 .o-container {
     max-width: 768px;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+}
+
+.center-content {
+    flex: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width: 100%;
 }

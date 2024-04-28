@@ -1,18 +1,24 @@
 .c-skills {
-    max-width: 37.5rem;
+
+    @include mediaquery(md) {
+        grid-template-columns: repeat(3, auto);
+    }
     
-    &__list-card {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+
+
+    &__list-item {
         background: #ff005191;
         border: none;
         box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
         height: 105px;
         transition: all 400ms ease;
-    }
-    
-    &__list-item {
-        padding: 0 2rem;
+        padding: 0.5rem;
         font-size: 14px;
         list-style: none;
+        margin-bottom: 1.5rem;
     }
 
     &__icon {
