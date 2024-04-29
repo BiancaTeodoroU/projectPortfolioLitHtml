@@ -5,6 +5,35 @@ mixin history(props = {})
         }
 
     .c-history
-        each imageUrl in state.imageUrls
-            .c-history__card
-                img(class="c-history__image" src=`${imageUrl}` alt="")
+        .c-history__grid
+            each imageUrl, index in state.imageUrls
+                .c-history__card(
+                    class={'c-history__image--rotate-left-0' : index === 0}
+                    class={'c-history__image--rotate-left-2' : index === 2}
+                    class={'c-history__image--rotate-right-3' : index === 3}
+                    class={'c-history__image--rotate-right-5' : index === 5}
+                )
+                    img(class="c-history__image" src=`${imageUrl}` alt="")
+        
+        
+        .c-history__content
+            h2(class="u-fs-38 u-color-pink u-font-weight-800 u-mb-24 u-m-0 u-text-center")
+                | Curiosidades 
+
+            span(class="u-fs-18 u-color-white u-db u-font-weight-400 u-mb-24")
+                | Minha história com programação começou logo após eu ter concluído o ensino médio. 
+                | Logo depois, consegui meu primeiro emprego aos 18 anos como auxiliar de escritório em geral e 
+                | tive a oportunidade de conhecer de perto os estagiários de TI da empresa. Foi assim que me apaixonei e 
+                | decidi ingressar na área, começando a faculdade de análise e desenvolvimento de sistemas em agosto daquele mesmo ano.
+
+            span(class="u-fs-18 u-color-white u-font-weight-400 u-db u-mb-24")
+                | Executei minha primeira aplicação Front-end na matéria de desenvolvimento web front-end da faculdade 
+                | e descobri que era isso que queria seguir como especialidade. Desde fevereiro de 2022, venho estudando para ser Desenvolvedora Front-end.
+
+
+            span(class="u-fs-18 u-color-white u-font-weight-400 u-db u-mb-24")
+                | Em 2024, após ter finalizado a faculdade, fui efetivada onde estava estagiária em Engenharia de Software 
+                | para Desenvolvedora Front-end Júnior.
+
+            span(class="u-fs-18 u-color-white u-font-weight-400")
+                | Meus passatempos favoritos são sair para comer, jogar no computador, desenhar e ficar com meus pets.
