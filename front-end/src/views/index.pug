@@ -5,7 +5,7 @@ html(lang="pt-BR")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     head
         meta(charset="utf-8")
-        title projectPortfolio
+        title portfolioBia
 
         link(rel="stylesheet" href="../styles/main.scss")
     body
@@ -73,8 +73,8 @@ html(lang="pt-BR")
             })
 
             .center-content
-                section(class="u-mb-32 u-mt-40" id="about-me")
-                    h2(class="u-fs-32 u-color-pink u-font-weight-800 u-mb-24 u-m-0 u-text-center")
+                section(class="u-mb-40 u-mt-40" id="about-me")
+                    h2(class="u-fs-38 u-color-pink u-font-weight-800 u-mb-40 u-m-0 u-text-center")
                         | Sobre mim 
                         
                     +about-me({
@@ -94,7 +94,25 @@ html(lang="pt-BR")
                             '../images/pizza.jpeg',
                         ]
                     })
+                
+                section(class="u-mb-32 u-mt-40" id="service-offers")
+                    h2(class="u-fs-38 u-color-pink u-font-weight-800 u-mb-40 u-m-0 u-text-center")
+                        | Serviços 
 
+                    +service-offers({
+                        items: [
+                            { 
+                                icon: 'laptop',
+                                title: 'Desenvolvimento de sites',
+                                description: 'Maximize a presença online da sua empresa com um site empresarial de alto impacto! Seja facilmente encontrado pelos seus clientes em potencial. Aumente sua visibilidade, expanda seu alcance e impulsione seus negócios. Vamos construir juntos o caminho para o sucesso online da sua empresa!.'
+                            },
+                            { 
+                                icon: 'palette',
+                                title: 'Criação de layouts',
+                                description: 'Transforme suas ideias em realidade digital com os meus serviços de criação de protótipos de interfaces web e mobile! Antes de dar o próximo passo, valide sua visão com um protótipo que captura a essência e a funcionalidade da sua ideia. Faço a criação de protótipos, que testam a viabilidade e a usabilidade do seu conceito.'
+                            }
+                        ]
+                    })
                     //- +history({
                     //-     imageUrl: '../images/acai.jpeg'
                     //- })  

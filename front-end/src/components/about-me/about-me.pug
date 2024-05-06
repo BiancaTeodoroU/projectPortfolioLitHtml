@@ -10,10 +10,10 @@ mixin about-me(props = {})
     .c-about-me(class="u-flex")&attributes(attributes)
         .c-about-me__content
             .u-mb-16
-                h3(class="u-mb-16 u-m-0 u-fs-24 u-fs-18@md u-font-weight-700 u-color-dark-blue-100")
+                h3(class="u-mb-16 u-m-0 u-fs-28 u-font-weight-700 u-color-dark-blue-100")
                     =state.title
                 
-                span(class="u-fs-16 u-color-white u-mb-16 u-font-weight-400")
+                span(class="c-about-me__description u-fs-18 u-color-white u-mb-16 u-font-weight-400")
                     =state.description
 
             if state.skills

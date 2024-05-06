@@ -12,7 +12,7 @@ mixin skills(props = {})
             li(
                 class="c-skills__list-item u-background-pink u-flex u-align-center u-flex-column u-justify-center u-text-center u-m-0 u-pd-0 u-border-16"
             )
-                .c-skills__icon
+                .c-skills__icon(class="u-mb-8")
                     case item.icon
                         when 'users'
                             include ./src/svg/users.svg

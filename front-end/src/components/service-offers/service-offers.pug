@@ -1,0 +1,23 @@
+mixin service-offers(props = {})
+    -   
+        let state = {
+            items: props.items || [],
+        }
+    
+    .c-service-offers(class="u-flex u-justify-center")
+        .c-service-offers__grid
+            each card in state.items
+                .c-service-offers__card(class="u-flex u-align-center u-flex-column")
+                    .c-service-offers__card-icon
+                        case card.icon 
+                            when 'laptop'
+                                include ./src/svg/laptop.svg
+                            when 'palette'
+                                include ./src/svg/palette.svg
+                    
+                    .c-service-offers__texts(class="u-text-center")
+                        h2(class="c-service-offers__card--title u-fs-24 u-color-dark-blue-100 u-m-0 u-mb-16 u-mt-8")
+                            =card.title
+                        
+                        span(class="u-fs-18 u-color-white")
+                            =card.description

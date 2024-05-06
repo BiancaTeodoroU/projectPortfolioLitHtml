@@ -118,21 +118,65 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"../javascript/index.js":[function(require,module,exports) {
-//- Carrousel
-
-var previousEl = document.getElementById('previous');
-var nextEl = document.getElementById('next');
-var sliderEl = document.getElementById('slider');
-previousEl.addEventListener('click', onPreviousClick);
-nextEl.addEventListener('click', onNextClick);
-function onPreviousClick() {
-  var sliderWidth = sliderEl.offsetWidth;
-  sliderEl.scrollLeft -= sliderWidth + 40;
-}
-function onNextClick() {
-  var sliderWidth = sliderEl.offsetWidth;
-  sliderEl.scrollLeft += sliderWidth + 40;
-}
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+// //- Carrousel
+// const previousEl = document.getElementById('previous');
+// const nextEl = document.getElementById('next');
+// const sliderEl = document.getElementById('slider');
+// previousEl.addEventListener('click', onPreviousClick)
+// nextEl.addEventListener('click', onNextClick)
+// function onPreviousClick() {
+//     const sliderWidth = sliderEl.offsetWidth;
+//     sliderEl.scrollLeft -= sliderWidth + 40;
+// }
+// function onNextClick() {
+//     const sliderWidth = sliderEl.offsetWidth;
+//     sliderEl.scrollLeft += sliderWidth + 40;
+// }
+// function typeWrite(elemento) {
+//     if (!elemento) {
+//         return
+//     }
+// }
+// document.addEventListener('DOMContentLoaded', function() {
+//     const titulo = document.querySelector('.c-about-me__description')
+//     typeWrite(titulo)
+// })
+//- Load description about me
+var Load = /*#__PURE__*/function () {
+  function Load() {
+    _classCallCheck(this, Load);
+  }
+  _createClass(Load, [{
+    key: "mount",
+    value: function mount() {
+      document.addEventListener('DOMContentLoaded', this.loadFuc);
+    }
+  }, {
+    key: "loadFuc",
+    value: function loadFuc() {
+      var elemento = document.querySelector('.c-about-me__description');
+      if (!elemento) {
+        return;
+      }
+      var textoArray = elemento.innerHTML.split('');
+      elemento.innerHTML = ' ';
+      textoArray.forEach(function (letra, i) {
+        setTimeout(function () {
+          elemento.innerHTML += letra;
+        }, 54 * i);
+      });
+    }
+  }]);
+  return Load;
+}();
+var loader = new Load();
+loader.mount();
 },{}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -158,7 +202,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33935" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37759" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

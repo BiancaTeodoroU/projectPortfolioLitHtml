@@ -7,7 +7,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: var(--black-body);
+  background-color: var(--black-body) !important;
   overflow-x: hidden !important;
 }
 
@@ -279,6 +279,10 @@ main {
   margin-bottom: 1.5rem;
 }
 
+.u-mb-32 {
+  margin-bottom: 2rem;
+}
+
 .u-mb-64 {
   margin-bottom: 4rem;
 }
@@ -289,6 +293,14 @@ main {
 
 .u-mt-40 {
   margin-top: 2.5rem;
+}
+
+.u-mb-40 {
+  margin-bottom: 2.5rem;
+}
+
+.u-mt-8 {
+  margin-top: 0.5rem;
 }
 
 .u-ml-14 {
@@ -438,7 +450,24 @@ main {
     height: 22rem;
   }
 }
+.c-about-me__description {
+  max-width: 30rem;
+}
+.c-about-me__description::after {
+  content: "|";
+  margin-left: 0.313rem;
+  opacity: 1;
+  animation: blinks 0.2s infinite;
+}
 
+@keyframes blinks {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
 .c-navigation {
   border-right: 0.063rem solid #28293D;
   background: #0C0D14;
@@ -519,7 +548,7 @@ main {
 }
 
 .c-navigation:hover, section.navigation.expanded {
-  width: 200px;
+  width: 14.375rem;
   overflow: hidden;
 }
 
@@ -1109,6 +1138,7 @@ section .carousel__card .carousel__card--image img {
 @media (min-width: 75em) {
   .c-history {
     display: flex;
+    align-items: center;
     flex-wrap: nowrap;
     flex-direction: unset;
   }
@@ -1163,6 +1193,36 @@ section .carousel__card .carousel__card--image img {
     margin-left: 2rem;
     margin-right: 2rem;
   }
+}
+
+.c-service-offers {
+  flex-wrap: wrap;
+}
+.c-service-offers__grid {
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: repeat(1, auto);
+}
+@media (min-width: 64em) {
+  .c-service-offers__grid {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+.c-service-offers__card {
+  width: 100%;
+  height: 100%;
+  padding: 2em 1.5em;
+  background: linear-gradient(rgba(47, 48, 52, 0.2196078431) 50%, #348bee 50%);
+  border: 1px solid #5344ff;
+  background-size: 100% 200%;
+  background-position: 0 3%;
+  border-radius: 1rem;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.185) -6px -2px 16px 0px;
+  cursor: pointer;
+}
+.c-service-offers__card-icon {
+  width: 3rem;
+  height: 3rem;
 }
 
 /*# sourceMappingURL=/main.b6459537.css.map */

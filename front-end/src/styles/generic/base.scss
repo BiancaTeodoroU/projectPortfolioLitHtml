@@ -8,7 +8,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: var(--black-body);
+    background-color: var(--black-body);
     overflow-x: hidden !important;
 }
 
@@ -19,7 +19,6 @@ body {
 
 main {
     display: flex;
-    
 }
 
 .o-container {

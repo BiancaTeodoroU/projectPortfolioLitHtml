@@ -36,4 +36,26 @@
             height: 22rem;
         }
     }
+
+    &__description {
+        max-width: 30rem;
+    }
+
+    &__description::after {
+        content: '|';
+        margin-left: 0.313rem;
+        opacity: 1;
+        animation: blinks .2s infinite;
+    }
+}
+
+//- resulting in a blinking cursor effect. 
+
+@keyframes blinks {
+    0%, 100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
 }
