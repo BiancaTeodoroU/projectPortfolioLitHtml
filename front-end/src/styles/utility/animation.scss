@@ -1,0 +1,14 @@
+.s-load-description {
+    white-space: nowrap; /* Prevent line wrapping */
+    overflow: hidden; /* Hide text that is not visible */
+    animation: writeText 4s steps(40) infinite; /* Repeat animation every 4 seconds */
+}
+
+@keyframes writeText {
+    0% {
+        width: 0; 
+    }
+    100% {
+        width: 100%; 
+    }
+}

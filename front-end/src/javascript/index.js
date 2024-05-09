@@ -17,16 +17,33 @@
 //     sliderEl.scrollLeft += sliderWidth + 40;
 // }
 
-// function typeWrite(elemento) {
-//     if (!elemento) {
-//         return
-//     }
-// }
+class Carrousel {
+    constructor() {
+        this.onPreviousClick = this.onPreviousClick.bind(this)
+        this.onNextClick = this.onNextClick.bind(this)
+    }
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const titulo = document.querySelector('.c-about-me__description')
-//     typeWrite(titulo)
-// })
+    mount() {
+        const previousEl = document.querySelector('.c-carrousel--previous')
+        const nextEl = document.querySelector('.c-carrousel--next')
+
+        previousEl.addEventListener('click', this.onPreviousClick)
+        nextEl.addEventListener('click', this.onNextClick)
+    }
+
+    onPreviousClick() {
+        const sliderWidth = document.querySelector('.c-carrousel--slider').offsetWidth
+        document.querySelector('.c-carrousel--slider').scrollLeft -= sliderWidth + 40
+    }
+    
+    onNextClick() {
+        const sliderWidth = document.querySelector('.c-carrousel--slider').offsetWidth
+        document.querySelector('.c-carrousel--slider').scrollLeft += sliderWidth + 40
+    }
+}
+
+const carrousel = new Carrousel()
+carrousel.mount()
 
 //- Load description about me
 
@@ -36,7 +53,7 @@ class Load {
     }
 
     loadFuc() {
-        const elemento = document.querySelector('.c-about-me__description')
+        const elemento = document.querySelector('.s-load-description')
         if (!elemento) {
             return
         }

@@ -1,29 +1,31 @@
-//- mixin carrousel(props={})
+mixin carrousel(props = {})
+    -   
+        let state = {
+            items: props.items || []
+        }
 
-//-     section#projects.projects.justify-content-md-center
-//-         div
-//-             h2.title-purple.text-center Projetos
-//-             .container-card
-//-             .arrow.arrow-left
-//-                 button(type='button', aria-label='próximo ao anterior', id='previous')
-//-                 // ... (same as before)
-//-             .arrow.arrow-right
-//-                 button(type='button', aria-label='o próximo', id='next')
-//-                 // ... (same as before)
-//-             .content-projects
-//-                 #slider.projects.ovfl-hdd
-//-                 each item in items
-//-                     .card-projects.ps-rl
-//-                     .cardContent-projects
-//-                         .imageCard-projects
-//-                         img(src=item.imageSrc, alt='')
-//-                         .name-projects
-//-                         span.name=item.name
-//-                         span.development=item.development
-//-                         span.Desc-difficulty-level=item.difficultyLevel
-//-                         .difficulty-level
-//-                     case state.icon
-//-                             svg(width='24', height='24', xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd')
-//-                             path(d='M15.668 8.626l8.332 1.159-6.065 5.874 1.48 8.341-7.416-3.997-7.416 3.997 1.481-8.341-6.064-5.874 8.331-1.159 3.668-7.626 3.669 7.626zm-6.67.925l-6.818.948 4.963 4.807-1.212 6.825 6.068-3.271 6.069 3.271-1.212-6.826 4.964-4.806-6.819-.948-3.002-6.241-3.001 6.241z')
-//-                         .button
-//-                         button(onclick=`window.open('${item.githubLink}')`, class='github ps-rl') Github
+    .c-carrousel
+        .c-carrousel__content(class="slide-content")
+            .c-carrousel__arrow(class="c-carrousel__arrow-left c-carrousel--previous")
+                include ./src/svg/arrow-left.svg
+            .c-carrousel__arrow(class="c-carrousel__arrow-right c-carrousel--next")
+                include ./src/svg/arrow-right.svg
+            .c-carrousel__align(class="o-row")
+                .c-carrousel--slider(class="o-col-4")
+                    each item, index in state.items 
+                        .c-carrousel__card(
+                            class={'u-mr-32': index !== 0 && index !== (state.items.length - 1)}
+                            class={'u-mr-32' : index === 0}
+                        )
+                            .c-carrousel__image-2
+                                img(class="c-carrousel__image" src=`${item.imageUrl}` alt="")                         
+                            .c-carrousel__card-content
+                                span(class="u-fs-26 u-db u-mb-16")
+                                    =item.name 
+                                span(class="u-fs-16 u-db u-mb-24")
+                                    =item.developmet
+                                button(
+                                    class="c-carrousel__card--button"
+                                    onclick=`window.open('${item.githubLink}')`
+                                )
+                                    | Github

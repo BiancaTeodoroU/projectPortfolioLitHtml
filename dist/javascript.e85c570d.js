@@ -138,15 +138,38 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 //     const sliderWidth = sliderEl.offsetWidth;
 //     sliderEl.scrollLeft += sliderWidth + 40;
 // }
-// function typeWrite(elemento) {
-//     if (!elemento) {
-//         return
-//     }
-// }
-// document.addEventListener('DOMContentLoaded', function() {
-//     const titulo = document.querySelector('.c-about-me__description')
-//     typeWrite(titulo)
-// })
+var Carrousel = /*#__PURE__*/function () {
+  function Carrousel() {
+    _classCallCheck(this, Carrousel);
+    this.onPreviousClick = this.onPreviousClick.bind(this);
+    this.onNextClick = this.onNextClick.bind(this);
+  }
+  _createClass(Carrousel, [{
+    key: "mount",
+    value: function mount() {
+      var previousEl = document.querySelector('.c-carrousel--previous');
+      var nextEl = document.querySelector('.c-carrousel--next');
+      previousEl.addEventListener('click', this.onPreviousClick);
+      nextEl.addEventListener('click', this.onNextClick);
+    }
+  }, {
+    key: "onPreviousClick",
+    value: function onPreviousClick() {
+      var sliderWidth = document.querySelector('.c-carrousel--slider').offsetWidth;
+      document.querySelector('.c-carrousel--slider').scrollLeft -= sliderWidth + 40;
+    }
+  }, {
+    key: "onNextClick",
+    value: function onNextClick() {
+      var sliderWidth = document.querySelector('.c-carrousel--slider').offsetWidth;
+      document.querySelector('.c-carrousel--slider').scrollLeft += sliderWidth + 40;
+    }
+  }]);
+  return Carrousel;
+}();
+var carrousel = new Carrousel();
+carrousel.mount();
+
 //- Load description about me
 var Load = /*#__PURE__*/function () {
   function Load() {
@@ -160,7 +183,7 @@ var Load = /*#__PURE__*/function () {
   }, {
     key: "loadFuc",
     value: function loadFuc() {
-      var elemento = document.querySelector('.c-about-me__description');
+      var elemento = document.querySelector('.s-load-description');
       if (!elemento) {
         return;
       }
@@ -202,7 +225,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37759" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34037" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
