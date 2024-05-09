@@ -17,33 +17,89 @@
 //     sliderEl.scrollLeft += sliderWidth + 40;
 // }
 
-class Carrousel {
-    constructor() {
-        this.onPreviousClick = this.onPreviousClick.bind(this)
-        this.onNextClick = this.onNextClick.bind(this)
-    }
+// class Carrousel {
+//     constructor() {
+//         this.onPreviousClick = this.onPreviousClick.bind(this)
+//         this.onNextClick = this.onNextClick.bind(this)
+//     }
 
-    mount() {
-        const previousEl = document.querySelector('.c-carrousel--previous')
-        const nextEl = document.querySelector('.c-carrousel--next')
+//     mount() {
+//         const previousEl = document.querySelector('.c-carrousel--previous')
+//         const nextEl = document.querySelector('.c-carrousel--next')
 
-        previousEl.addEventListener('click', this.onPreviousClick)
-        nextEl.addEventListener('click', this.onNextClick)
-    }
+//         previousEl.addEventListener('click', this.onPreviousClick)
+//         nextEl.addEventListener('click', this.onNextClick)
+//     }
 
-    onPreviousClick() {
-        const sliderWidth = document.querySelector('.c-carrousel--slider').offsetWidth
-        document.querySelector('.c-carrousel--slider').scrollLeft -= sliderWidth + 40
-    }
+//     onPreviousClick() {
+//         const sliderWidth = document.querySelector('.c-carrousel--slider').offsetWidth
+//         document.querySelector('.c-carrousel--slider').scrollLeft -= sliderWidth 
+//     }
     
-    onNextClick() {
-        const sliderWidth = document.querySelector('.c-carrousel--slider').offsetWidth
-        document.querySelector('.c-carrousel--slider').scrollLeft += sliderWidth + 40
+//     onNextClick() {
+//         const sliderWidth = document.querySelector('.c-carrousel--slider').offsetWidth
+//         document.querySelector('.c-carrousel--slider').scrollLeft += sliderWidth 
+//     }
+// }
+
+// const carrousel = new Carrousel()
+// carrousel.mount()
+
+
+class Cards {
+    constructor() {
+        this.init()
+    }
+
+    init() {
+        document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            this.setupCards()
+            this.activateCard(1) // Activates the second card by default
+        }, 1)
+        })
+    }
+
+    setupCards() {
+        const cardsContainer = document.querySelector(".c-carousel")
+        if (!cardsContainer) return
+
+        cardsContainer.addEventListener('click', (event) => {
+        const clickedCard = event.target
+        if (clickedCard.dataset.card) {
+            const cardIndex = parseInt(clickedCard.dataset.card)
+            this.activateCard(cardIndex)
+        }
+        });
+    }
+
+    activateCard(index) {
+        const cards = document.querySelectorAll(".c-carousel .c-carousel__card")
+        if (cards.length === 0) return
+
+        cards.forEach((card, i) => {
+        card.classList.remove("c-carousel__card--left", "c-carousel__card--center", "c-carousel__card--right")
+        if (i === index) {
+            card.classList.add("c-carousel__card--center")
+        } else if (i === this.getLeftIndex(index)) {
+            card.classList.add("c-carousel__card--left")
+        } else if (i === this.getRightIndex(index)) {
+            card.classList.add("c-carousel__card--right")
+        }
+        });
+    }
+
+    getLeftIndex(index) {
+        return (index - 1 + 3) % 3 // 3 is the total number of cards
+    }
+
+    getRightIndex(index) {
+        return (index + 1) % 3
     }
 }
 
-const carrousel = new Carrousel()
-carrousel.mount()
+// Instanciar a classe Cards
+const cardsInstance = new Cards()
 
 //- Load description about me
 

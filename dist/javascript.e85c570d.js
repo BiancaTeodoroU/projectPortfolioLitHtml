@@ -138,37 +138,89 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 //     const sliderWidth = sliderEl.offsetWidth;
 //     sliderEl.scrollLeft += sliderWidth + 40;
 // }
-var Carrousel = /*#__PURE__*/function () {
-  function Carrousel() {
-    _classCallCheck(this, Carrousel);
-    this.onPreviousClick = this.onPreviousClick.bind(this);
-    this.onNextClick = this.onNextClick.bind(this);
+// class Carrousel {
+//     constructor() {
+//         this.onPreviousClick = this.onPreviousClick.bind(this)
+//         this.onNextClick = this.onNextClick.bind(this)
+//     }
+//     mount() {
+//         const previousEl = document.querySelector('.c-carrousel--previous')
+//         const nextEl = document.querySelector('.c-carrousel--next')
+//         previousEl.addEventListener('click', this.onPreviousClick)
+//         nextEl.addEventListener('click', this.onNextClick)
+//     }
+//     onPreviousClick() {
+//         const sliderWidth = document.querySelector('.c-carrousel--slider').offsetWidth
+//         document.querySelector('.c-carrousel--slider').scrollLeft -= sliderWidth 
+//     }
+//     onNextClick() {
+//         const sliderWidth = document.querySelector('.c-carrousel--slider').offsetWidth
+//         document.querySelector('.c-carrousel--slider').scrollLeft += sliderWidth 
+//     }
+// }
+// const carrousel = new Carrousel()
+// carrousel.mount()
+var Cards = /*#__PURE__*/function () {
+  function Cards() {
+    _classCallCheck(this, Cards);
+    this.init();
   }
-  _createClass(Carrousel, [{
-    key: "mount",
-    value: function mount() {
-      var previousEl = document.querySelector('.c-carrousel--previous');
-      var nextEl = document.querySelector('.c-carrousel--next');
-      previousEl.addEventListener('click', this.onPreviousClick);
-      nextEl.addEventListener('click', this.onNextClick);
+  _createClass(Cards, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+      document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(function () {
+          _this.setupCards();
+          _this.activateCard(1); // Activates the second card by default
+        }, 1);
+      });
     }
   }, {
-    key: "onPreviousClick",
-    value: function onPreviousClick() {
-      var sliderWidth = document.querySelector('.c-carrousel--slider').offsetWidth;
-      document.querySelector('.c-carrousel--slider').scrollLeft -= sliderWidth + 40;
+    key: "setupCards",
+    value: function setupCards() {
+      var _this2 = this;
+      var cardsContainer = document.querySelector(".c-carousel");
+      if (!cardsContainer) return;
+      cardsContainer.addEventListener('click', function (event) {
+        var clickedCard = event.target;
+        if (clickedCard.dataset.card) {
+          var cardIndex = parseInt(clickedCard.dataset.card);
+          _this2.activateCard(cardIndex);
+        }
+      });
     }
   }, {
-    key: "onNextClick",
-    value: function onNextClick() {
-      var sliderWidth = document.querySelector('.c-carrousel--slider').offsetWidth;
-      document.querySelector('.c-carrousel--slider').scrollLeft += sliderWidth + 40;
+    key: "activateCard",
+    value: function activateCard(index) {
+      var _this3 = this;
+      var cards = document.querySelectorAll(".c-carousel .c-carousel__card");
+      if (cards.length === 0) return;
+      cards.forEach(function (card, i) {
+        card.classList.remove("c-carousel__card--left", "c-carousel__card--center", "c-carousel__card--right");
+        if (i === index) {
+          card.classList.add("c-carousel__card--center");
+        } else if (i === _this3.getLeftIndex(index)) {
+          card.classList.add("c-carousel__card--left");
+        } else if (i === _this3.getRightIndex(index)) {
+          card.classList.add("c-carousel__card--right");
+        }
+      });
+    }
+  }, {
+    key: "getLeftIndex",
+    value: function getLeftIndex(index) {
+      return (index - 1 + 3) % 3; // 3 is the total number of cards
+    }
+  }, {
+    key: "getRightIndex",
+    value: function getRightIndex(index) {
+      return (index + 1) % 3;
     }
   }]);
-  return Carrousel;
-}();
-var carrousel = new Carrousel();
-carrousel.mount();
+  return Cards;
+}(); // Instanciar a classe Cards
+var cardsInstance = new Cards();
 
 //- Load description about me
 var Load = /*#__PURE__*/function () {
@@ -225,7 +277,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34037" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36647" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -4,10 +4,10 @@ mixin service-offers(props = {})
             items: props.items || [],
         }
     
-    .c-service-offers(class="u-flex u-justify-center")
-        .c-service-offers__grid
+    .c-service-offers(class="o-row u-justify-center")
+        .c-service-offers__grid(class="u-flex u-justify-center o-col-md-10")
             each card in state.items
-                .c-service-offers__card(class="u-flex u-align-center u-flex-column")
+                .c-service-offers__card(class="o-col o-col-sm-5 u-flex u-align-center u-flex-column u-m-16")
                     .c-service-offers__card-icon
                         case card.icon 
                             when 'laptop'

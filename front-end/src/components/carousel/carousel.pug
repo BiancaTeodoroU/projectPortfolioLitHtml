@@ -1,0 +1,14 @@
+mixin carousel(props = {})
+    -
+        let state = {
+            items: props.items || [],
+            title: props.title
+        }
+
+    .c-carousel 
+        each item in state.items
+            .c-carousel__card(data-card=`${item.id}`)
+                .c-carousel__detail
+                    span.u-fs-26.u-db.u-mb-16 #{item.name}
+                    span.u-fs-16.u-db.u-mb-24 #{item.development}
+                    button.c-carrousel__card--button(onclick=`window.open('${item.githubLink}')`) Github
