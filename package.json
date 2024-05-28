@@ -10,9 +10,9 @@
     "sass": "^1.69.4"
   },
   "scripts": {
-    "dev": "parcel ./front-end/src/views/index.pug",
+    "dev": "parcel ./packages/src/views/index.pug",
     "devopen": "parcel ./front-end/src/views/index.pug --open 'google chrome'",
-    "build": "parcel build ./front-end/src/views/index.pug"
+    "build": "babel packages/src --out-dir dist"
   },
   "repository": {
     "type": "git",

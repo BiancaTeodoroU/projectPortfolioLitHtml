@@ -119,115 +119,185 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"../javascript/index.js":[function(require,module,exports) {
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
-// //- Carrousel
-// const previousEl = document.getElementById('previous');
-// const nextEl = document.getElementById('next');
-// const sliderEl = document.getElementById('slider');
-// previousEl.addEventListener('click', onPreviousClick)
-// nextEl.addEventListener('click', onNextClick)
-// function onPreviousClick() {
-//     const sliderWidth = sliderEl.offsetWidth;
-//     sliderEl.scrollLeft -= sliderWidth + 40;
-// }
-// function onNextClick() {
-//     const sliderWidth = sliderEl.offsetWidth;
-//     sliderEl.scrollLeft += sliderWidth + 40;
-// }
-// class Carrousel {
-//     constructor() {
-//         this.onPreviousClick = this.onPreviousClick.bind(this)
-//         this.onNextClick = this.onNextClick.bind(this)
-//     }
-//     mount() {
-//         const previousEl = document.querySelector('.c-carrousel--previous')
-//         const nextEl = document.querySelector('.c-carrousel--next')
-//         previousEl.addEventListener('click', this.onPreviousClick)
-//         nextEl.addEventListener('click', this.onNextClick)
-//     }
-//     onPreviousClick() {
-//         const sliderWidth = document.querySelector('.c-carrousel--slider').offsetWidth
-//         document.querySelector('.c-carrousel--slider').scrollLeft -= sliderWidth 
-//     }
-//     onNextClick() {
-//         const sliderWidth = document.querySelector('.c-carrousel--slider').offsetWidth
-//         document.querySelector('.c-carrousel--slider').scrollLeft += sliderWidth 
-//     }
-// }
-// const carrousel = new Carrousel()
-// carrousel.mount()
-var Cards = /*#__PURE__*/function () {
-  function Cards() {
-    _classCallCheck(this, Cards);
-    this.init();
+//- Carrousel
+document.addEventListener('DOMContentLoaded', function () {
+  var previousEl = document.getElementById('previous');
+  var nextEl = document.getElementById('next');
+  var sliderEl = document.getElementById('slider');
+  if (previousEl && nextEl) {
+    previousEl.addEventListener('click', onPreviousClick);
+    nextEl.addEventListener('click', onNextClick);
   }
-  _createClass(Cards, [{
-    key: "init",
-    value: function init() {
-      var _this = this;
-      document.addEventListener('DOMContentLoaded', function () {
-        setTimeout(function () {
-          _this.setupCards();
-          _this.activateCard(1); // Activates the second card by default
-        }, 1);
-      });
+  function onPreviousClick() {
+    if (sliderEl) {
+      var sliderWidth = sliderEl.offsetWidth;
+      sliderEl.scrollLeft -= sliderWidth + 40;
     }
-  }, {
-    key: "setupCards",
-    value: function setupCards() {
-      var _this2 = this;
-      var cardsContainer = document.querySelector(".c-carousel");
-      if (!cardsContainer) return;
-      cardsContainer.addEventListener('click', function (event) {
-        var clickedCard = event.target;
-        if (clickedCard.dataset.card) {
-          var cardIndex = parseInt(clickedCard.dataset.card);
-          _this2.activateCard(cardIndex);
+  }
+  function onNextClick() {
+    if (sliderEl) {
+      var sliderWidth = sliderEl.offsetWidth;
+      sliderEl.scrollLeft += sliderWidth + 40;
+    }
+  }
+  var Carrousel = /*#__PURE__*/function () {
+    function Carrousel() {
+      _classCallCheck(this, Carrousel);
+      this.onPreviousClick = this.onPreviousClick.bind(this);
+      this.onNextClick = this.onNextClick.bind(this);
+    }
+    return _createClass(Carrousel, [{
+      key: "mount",
+      value: function mount() {
+        var previousEl = document.querySelector('.c-carrousel--previous');
+        var nextEl = document.querySelector('.c-carrousel--next');
+        if (previousEl && nextEl) {
+          previousEl.addEventListener('click', this.onPreviousClick);
+          nextEl.addEventListener('click', this.onNextClick);
         }
-      });
-    }
-  }, {
-    key: "activateCard",
-    value: function activateCard(index) {
-      var _this3 = this;
-      var cards = document.querySelectorAll(".c-carousel .c-carousel__card");
-      if (cards.length === 0) return;
-      cards.forEach(function (card, i) {
-        card.classList.remove("c-carousel__card--left", "c-carousel__card--center", "c-carousel__card--right");
-        if (i === index) {
-          card.classList.add("c-carousel__card--center");
-        } else if (i === _this3.getLeftIndex(index)) {
-          card.classList.add("c-carousel__card--left");
-        } else if (i === _this3.getRightIndex(index)) {
-          card.classList.add("c-carousel__card--right");
+      }
+    }, {
+      key: "onPreviousClick",
+      value: function onPreviousClick() {
+        var sliderEl = document.querySelector('.c-carrousel--slider');
+        if (sliderEl) {
+          var sliderWidth = sliderEl.offsetWidth;
+          sliderEl.scrollLeft -= sliderWidth;
         }
-      });
-    }
-  }, {
-    key: "getLeftIndex",
-    value: function getLeftIndex(index) {
-      return (index - 1 + 3) % 3; // 3 is the total number of cards
-    }
-  }, {
-    key: "getRightIndex",
-    value: function getRightIndex(index) {
-      return (index + 1) % 3;
-    }
-  }]);
-  return Cards;
-}(); // Instanciar a classe Cards
-var cardsInstance = new Cards();
+      }
+    }, {
+      key: "onNextClick",
+      value: function onNextClick() {
+        var sliderEl = document.querySelector('.c-carrousel--slider');
+        if (sliderEl) {
+          var sliderWidth = sliderEl.offsetWidth;
+          sliderEl.scrollLeft += sliderWidth;
+        }
+      }
+    }]);
+  }();
+  var carrousel = new Carrousel();
+  carrousel.mount();
+});
+
+// class Cards {
+//     constructor() {
+//         this.init()
+//     }
+
+//     init() {
+//         document.addEventListener('DOMContentLoaded', () => {
+//         setTimeout(() => {
+//             this.setupCards()
+//             this.activateCard(1) // Activates the second card by default
+//         }, 1)
+//         })
+//     }
+
+//     setupCards() {
+//         const cardsContainer = document.querySelector(".c-carousel")
+//         if (!cardsContainer) return
+
+//         cardsContainer.addEventListener('click', (event) => {
+//         const clickedCard = event.target
+//         if (clickedCard.dataset.card) {
+//             const cardIndex = parseInt(clickedCard.dataset.card)
+//             this.activateCard(cardIndex)
+//         }
+//         });
+//     }
+
+//     activateCard(index) {
+//         const cards = document.querySelectorAll(".c-carousel .c-carousel__card")
+//         if (cards.length === 0) return
+
+//         cards.forEach((card, i) => {
+//         card.classList.remove("c-carousel__card--left", "c-carousel__card--center", "c-carousel__card--right")
+//         if (i === index) {
+//             card.classList.add("c-carousel__card--center")
+//         } else if (i === this.getLeftIndex(index)) {
+//             card.classList.add("c-carousel__card--left")
+//         } else if (i === this.getRightIndex(index)) {
+//             card.classList.add("c-carousel__card--right")
+//         }
+//         });
+//     }
+
+//     getLeftIndex(index) {
+//         return (index - 1 + 3) % 3 // 3 is the total number of cards
+//     }
+
+//     getRightIndex(index) {
+//         return (index + 1) % 3
+//     }
+// }
+
+// // Instanciar a classe Cards
+// const cardsInstance = new Cards()
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const carousel = document.querySelector('.carousel');
+//     const items = document.querySelectorAll('.item');
+//     const leftButton = document.querySelector('.button--left');
+//     const rightButton = document.querySelector('.button--right');
+
+//     console.log(carousel, items, leftButton, rightButton); // Adicione esta linha para verificar se os elementos são encontrados
+
+//     if (carousel && items.length > 0 && leftButton && rightButton) {
+//         leftButton.addEventListener('click', function() {
+//             roll('left');
+//         });
+//         rightButton.addEventListener('click', function() {
+//             roll('right');
+//         });
+
+//         function roll(direction) {
+//             carousel.classList.add(`moving-${direction}`);
+
+//             for (var item of items) {
+//             const startPosition = item.dataset.position;
+//             let endPosition;
+
+//             if (direction === 'right') {
+//                 endPosition = parseInt(startPosition) + 1;
+//             }
+//             if (direction === 'left') {
+//                 endPosition = parseInt(startPosition) - 1;
+//             }
+//             if (endPosition > 5) {
+//                 endPosition = 1;
+//                 item.style.zIndex = '-1';
+//             } else if (endPosition < 1) {
+//                 endPosition = 5;
+//                 item.style.zIndex = '-1';
+//             } else {
+//                 item.style.zIndex = '';
+//             }
+//             item.dataset.position = endPosition;
+//             item.addEventListener("transitionend", function() {
+//                 carousel.classList.remove(`moving-${direction}`);
+//             }, false);
+//             }
+
+//             const activeItem = document.querySelector('[data-position="3"]');
+//             console.log(activeItem);
+//         }
+//         } else {
+//         console.error('Elementos não encontrados no DOM.');
+//         }
+// });
 
 //- Load description about me
 var Load = /*#__PURE__*/function () {
   function Load() {
     _classCallCheck(this, Load);
   }
-  _createClass(Load, [{
+  return _createClass(Load, [{
     key: "mount",
     value: function mount() {
       document.addEventListener('DOMContentLoaded', this.loadFuc);
@@ -248,7 +318,6 @@ var Load = /*#__PURE__*/function () {
       });
     }
   }]);
-  return Load;
 }();
 var loader = new Load();
 loader.mount();
@@ -277,7 +346,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36647" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39707" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
