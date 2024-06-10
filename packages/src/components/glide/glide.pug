@@ -1,0 +1,56 @@
+mixin glider(props = {})
+    -   
+        let state = {
+            items: props.items || []
+        }
+
+    .u-flex(class="u-align-center u-justify-center")
+        .glide(class="c-glide__container")
+            .u-flex(class="u-justify-center")
+                +glide-cat()
+            .glide__track(data-glide-el='track')
+                ul(class="c-glide__list glide__slides")
+                    each item in state.items 
+                        li(class="c-glide__item glide__slide")
+                            .c-glide__card(class="u-flex u-justify-center")
+                                +blink()
+                                .c-glide__content-image(class="u-mb-24")
+                                    img(class="c-glide__image" src=`${item.imageUrl}` alt="")                         
+                                span(class="u-fs-18 u-db u-mb-16 u-color-white u-text-center")
+                                    =item.name 
+                                span(class="u-fs-18 u-db u-mb-16 u-color-white u-text-center")
+                                    =item.description
+                                button(
+                                    class="c-glide__button u-ml-56 u-mr-56"
+                                    onclick=`window.open('${item.githubLink}')`
+                                )
+                                    | Acessar o código
+
+            .glide__arrows(data-glide-el='controls')
+                button(type="button" class="c-glide__arrow--left glide__arrow glide__arrow--left" data-glide-dir='<')
+                    include ./src/svg/arrow-left.svg
+                button(type="button" class="c-glide__arrow--right glide__arrow glide__arrow--right" data-glide-dir='>')
+                    include ./src/svg/arrow-right.svg
+
+mixin glide-cat    
+
+    .glide__cat 
+        .ear(class="ear--left")
+        .ear(class="ear--right")
+        .face
+            .eye(class="eye--left")
+                .eye(class="eye-pupil")
+            .eye(class="eye--right")
+                .eye(class="eye-pupil")
+            .muzzle 
+        .body 
+            .paw(class="paw--left")
+            .paw(class="paw--right")
+
+        .tie(class="tie--right")    
+            .tie(class="tie--right-1")
+            .tie(class="tie--right-2")
+        .tie(class="tie--center")
+        .tie(class="tie--left")
+            .tie(class="tie--left-1")
+            .tie(class="tie--left-2")

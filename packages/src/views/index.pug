@@ -10,6 +10,11 @@ html(lang="pt-BR")
         link(rel="stylesheet" href="../styles/main.scss")
         script(type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js")
         script(nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js")
+        script(src="https://cdn.jsdelivr.net/npm/@glidejs/glide")
+        script(src="https://cdn.tailwindcss.com")
+        //- link(rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css")
+        //- link(rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css")
+        //- script(src="node_modules/@glidejs/glide/dist/glide.min.js")
     body
         +header({
             title: 'Front',
@@ -118,69 +123,41 @@ html(lang="pt-BR")
                 section(class="u-mb-32 u-mt-40" id="projects")
                     h2(class="u-fs-38 u-color-pink u-font-weight-800 u-mb-40 u-m-0 u-text-center")
                         | Projetos 
-
-                    //- +carousel({
-                    //-     items: [
-                    //-         { 
-                    //-             id: 1, 
-                    //-             imageUrl: "../images/carousel/projectBuf.jpeg",
-                    //-             name: "Prova de sistema de vendas em flask", 
-                    //-             development: "Prova com o objetivo de ser feito um sistema de vendas utilizando o framework flask.", 
-                    //-             githubLink: "https://github.com/project-a" 
-                    //-         },
-                    //-         { 
-                    //-             id: 2, 
-                    //-             imageUrl: "../images/carousel/projectLIstUsers.png",
-                    //-             name: "Sistema de listagem de usuários", 
-                    //-             development: "Projeto com o objetivo de criar um sistema de listagem de usuários, utilizando EJS, javascript, css e cypress para teste de integração.", 
-                    //-             githubLink: "https://github.com/project-b" 
-                    //-         },
-                    //-         { 
-                    //-             id: 3, 
-                    //-             imageUrl: "../images/carousel/provaDevWebFront.jpeg",
-                    //-             name: "Prova Dev web Front-end", 
-                    //-             development: "Prova de desenvolvimento web front-end que tinha como objetivo aprender mais sobre HTML, CSS, JavaScript e como utilizar o bootstrap.", 
-                    //-             githubLink: "https://github.com/project-c" 
-                    //-         },
-                    //-     ]
-                    //- })
-
-
-                    +carrousel({
+                    
+                    +glider({
                         items: [
                             {
-                                imageUrl: '../images/acai.jpeg',
-                                name: 'Tela de login em pug',
-                                developmet: 'Tela de login feita em pug, design feito por mim no figma e executado em pug no intuito de aprender mais sobre pug e explorar oque pode ser feito utilizando o framework.'
+                                imageUrl: '../images/carousel/projectBuf.jpeg',
+                                name: 'Prova de sistema de vendas em flask',
+                                description: 'Prova com o objetivo de ser feito um sistema de vendas utilizando o framework flask.'
                             },
                             {
-                                imageUrl: '../images/frieren.webp',
-                                name: 'Tela de login em pug',
-                                developmet: 'Tela de login feita em pug, design feito por mim no figma e executado em pug no intuito de aprender mais sobre pug e explorar oque pode ser feito utilizando o framework.'
+                                imageUrl: '../images/carousel/projectLIstUsers.png',
+                                name: 'Sistema de listagem de usuários',
+                                description: 'O projeto consiste em uma aplicação onde o usuário acessa a página inicial e pode adicionar novos usuários.'
                             },
                             {
-                                imageUrl: '../images/laptop.png',
-                                name: 'Tela de login em pug',
-                                developmet: 'Tela de login feita em pug, design feito por mim no figma e executado em pug no intuito de aprender mais sobre pug e explorar oque pode ser feito utilizando o framework.'
+                                imageUrl: '../images/carousel/provaDevWebFront.jpeg',
+                                name: 'Prova Dev web Front-end',
+                                description: 'Prova de desenvolvimento web front-end que tinha como objetivo aprender mais sobre HTML, CSS, JavaScript e como utilizar o bootstrap.'
                             },
                             {
-                                imageUrl: '../images/Mia.png',
-                                name: 'Tela de login em pug',
-                                developmet: 'Tela de login feita em pug, design feito por mim no figma e executado em pug no intuito de aprender mais sobre pug e explorar oque pode ser feito utilizando o framework.'
+                                imageUrl: '../images/carousel/kimetsuMusic.png',
+                                name: 'Kimetsu Music',
+                                description: 'O projeto consiste em uma aplicação web que exibe uma interface semelhante a do spotify, porém com uma proposta visual diferente.'
                             },
                             {
-                                imageUrl: '../images/gatoMemeRIndo.jpg',
+                                imageUrl: '../images/carousel/LayoutGym.jpeg',
                                 name: 'Tela de login em pug',
-                                developmet: 'Tela de login feita em pug, design feito por mim no figma e executado em pug no intuito de aprender mais sobre pug e explorar oque pode ser feito utilizando o framework.'
+                                description: 'Tela de login feita em pug, design feito por mim no figma e executado em pug no intuito de aprender mais sobre pug e explorar oque pode ser feito utilizando o framework.'
                             },
                             {
-                                imageUrl: '../images/pano.jpeg',
-                                name: 'Tela de login em pug',
-                                developmet: 'Tela de login feita em pug, design feito por mim no figma e executado em pug no intuito de aprender mais sobre pug e explorar oque pode ser feito utilizando o framework.'
+                                imageUrl: '../images/carousel/formlárioLol.jpeg',
+                                name: 'Formulário com o tema de league of legends',
+                                description: 'Formulário feito com o tema de league of legends para poder ser feito testes em API.'
                             }
                         ]
                     })
-                    
 
                     //- +history({
                     //-     imageUrl: '../images/acai.jpeg'

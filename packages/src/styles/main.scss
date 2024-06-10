@@ -1,4 +1,6 @@
 /** generic **/
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
 @import "./generic/base.scss";
 @import "./generic/box-sizing.scss";
 @import "./generic/mediaquerys.scss";
@@ -27,8 +29,8 @@
 @import "../components/about-me/about-me.scss";
 @import "../components/navigation/navigation.scss";
 @import "../components/cat/cat.scss";
-@import "../components/carrousel/carrousel.scss";
 @import "../components/skills/skills.scss";
 @import "../components/history/history.scss";
 @import "../components/service-offers/service-offers.scss";
-@import "../components/carousel/carousel.scss";
+@import "../components/glide/glide.scss";
+@import "../components/blink/blink.scss";

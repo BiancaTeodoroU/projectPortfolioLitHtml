@@ -50,6 +50,10 @@
     flex-wrap: wrap;
 }
 
+.u-overflow-hidden {
+    overflow: hidden;
+}
+
 // .o-row {
 //     display: grid;
 //     grid-template-columns: repeat(1, 1fr);
@@ -73,6 +77,53 @@
 //         padding: 20px;
 //     }
 // }
+
+@mixin grid($prefix, $columns) {
+    @for $current from 1 through $columns {
+        .o-column-#{$current}\@#{$prefix} {
+            flex: 0 0 percentage($current / $columns);
+            -webkit-flex: 0 0 percentage($current / $columns);
+            max-width: percentage($current / $columns);
+        }
+    }
+}
+
+.o-row {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+}
+
+.o-column {
+    flex: 0 0 auto;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+$gridlist-generate: xs sm md lg;
+
+@each $current in $gridlist-generate {
+    @include mediaquery($current) {
+        @include grid($current, 12);
+    }
+}
+
+.o-offset {
+    &-1\@sm {
+        @include mediaquery(sm) {
+            margin-left: 8.33333333%;
+        }
+    }
+
+    &-1\@md {
+        @include mediaquery(md) {
+            margin-left: 8.33333333%;
+        }
+    }
+}
 
 .u-order-1 {
     order: 1;

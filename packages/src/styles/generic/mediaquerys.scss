@@ -1,24 +1,24 @@
 @mixin mediaquery($breakpoint) {
     @if $breakpoint == xs {
-        @media (min-width: 36em) {
+        @media (min-width: 36rem) {
         @content;
         }
     }
 
     @if $breakpoint == sm {
-        @media (min-width: 48em) {
+        @media (min-width: 48rem) {
         @content;
         }
     }
 
     @else if $breakpoint == md {
-        @media (min-width: 64em) {
+        @media (min-width: 64rem) {
         @content;
         }
     }
 
     @else if $breakpoint == lg {
-        @media (min-width: 75em) {
+        @media (min-width: 75rem) {
         @content;
         }
     }

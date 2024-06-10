@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
+    "@glidejs/glide": "^3.6.1",
     "pug": "^3.0.2"
   },
   "devDependencies": {
