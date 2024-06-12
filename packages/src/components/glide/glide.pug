@@ -13,12 +13,13 @@ mixin glider(props = {})
                     each item in state.items 
                         li(class="c-glide__item glide__slide")
                             .c-glide__card(class="u-flex u-justify-center")
-                                +blink()
-                                .c-glide__content-image(class="u-mb-24")
-                                    img(class="c-glide__image" src=`${item.imageUrl}` alt="")                         
-                                span(class="u-fs-18 u-db u-mb-16 u-color-white u-text-center")
-                                    =item.name 
-                                span(class="u-fs-18 u-db u-mb-16 u-color-white u-text-center")
+                                .u-flex(class="u-justify-end u-mb-8")
+                                    +blink()                  
+                                .c-glide__content-image(class="u-mb-16")
+                                    img(class="c-glide__image" src=`${item.imageUrl}` alt="")   
+                                span(class="u-fs-24 u-font-weight-700 u-db u-color-pink u-text-center u-mb-16")
+                                    =item.name     
+                                span(class="u-fs-14 u-db u-mb-16 u-color-white u-text-center u-font-weight-400")
                                     =item.description
                                 button(
                                     class="c-glide__button u-ml-56 u-mr-56"

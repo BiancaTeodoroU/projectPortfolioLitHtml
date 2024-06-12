@@ -1,6 +1,5 @@
 mixin blink
-    .u-flex(class="u-align-center")
-        .blink 
-        .blink--active
-            span(class="u-color-white u-fs-14")
-                | active
+    .c-blink(class="u-flex u-align-center")
+        .blink.u-inline-block.u-flex-shrink-0.u-relative.u-mr-8.is-pulse.is-bordered.is-success()&attributes(attributes)
+        span(class="u-color-white u-fs-12")
+            | active
