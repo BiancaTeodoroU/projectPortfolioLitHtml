@@ -145,7 +145,7 @@ var Load = /*#__PURE__*/function () {
   }, {
     key: "loadFuc",
     value: function loadFuc() {
-      var elemento = document.querySelector('.s-load-description');
+      var elemento = document.querySelector('.s-load-title');
       if (!elemento) {
         return;
       }
@@ -186,7 +186,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45975" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44251" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

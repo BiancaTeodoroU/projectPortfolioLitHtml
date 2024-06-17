@@ -19,6 +19,7 @@ body {
 
 main {
     display: flex;
+    overflow: hidden !important;
 }
 
 .o-container {

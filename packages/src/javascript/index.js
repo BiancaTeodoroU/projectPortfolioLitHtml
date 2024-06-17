@@ -15,7 +15,7 @@ class Load {
     }
 
     loadFuc() {
-        const elemento = document.querySelector('.s-load-description')
+        const elemento = document.querySelector('.s-load-title')
         if (!elemento) {
             return
         }

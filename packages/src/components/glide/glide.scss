@@ -59,11 +59,22 @@
 
     &__arrow {
         &--left {
-            left: -6rem;
+			top: 0;
+			
+
+			@include mediaquery(sm) {
+				top: 50%;
+				left: -6rem;
+			}
         }
 
         &--right {
-            right: -6rem;
+			top: 0;
+
+			@include mediaquery(sm) {
+				top: 50%;
+				right: -6rem;
+			}
         }
     }
 }

@@ -1,0 +1,29 @@
+mixin knowledges(props = {})
+    -       
+        let state = {
+            items: props.items || []
+        }
+    
+    .c-knowledges 
+        .c-knowledges--grid.u-justify-content-center
+            each item in state.items
+                .box.ps-rl.ovfl-hdd
+                    h2 
+                        =item.name
+                        .c-knowledges__icon 
+                            case item.icon 
+                                when 'html'
+                                    include ./src/svg/html.svg
+                                when 'css'
+                                    include ./src/svg/css.svg
+                                when 'sass'
+                                    include ./src/svg/sass.svg
+                                when 'javascript'
+                                    include ./src/svg/javascript.svg
+                                when 'pug'
+                                    include ./src/svg/pug.svg
+                                when 'github'
+                                    include ./src/svg/github.svg    
+                    .content
+                        span(class="u-fs-14 u-color-white")
+                            =item.description

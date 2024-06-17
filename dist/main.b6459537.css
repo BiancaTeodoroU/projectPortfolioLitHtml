@@ -151,6 +151,7 @@ body {
 
 main {
   display: flex;
+  overflow: hidden !important;
 }
 
 .o-container {
@@ -227,6 +228,7 @@ main {
   --dark-blue-100: #348bee;
   --dark-blue-200: #372dc9;
   --dark-blue-300: #2C2081;
+  --dark-purple: hsl(245, 75%, 52%);
 }
 
 .u-color-pink {
@@ -1322,6 +1324,92 @@ main {
   height: 30px;
 }
 
+.c-knowledges {
+  display: flex;
+  justify-content: center;
+}
+.c-knowledges--grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(1, auto);
+  grid-gap: 1rem;
+}
+@media (min-width: 64rem) {
+  .c-knowledges--grid {
+    grid-template-columns: repeat(3, 350px);
+    width: unset;
+  }
+}
+
+.box {
+  height: 250px;
+  border: 1px solid hsl(245, 75%, 52%);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.box h2 {
+  font-size: 20px;
+  color: #fff;
+}
+
+.box svg {
+  position: absolute;
+  width: 150px;
+  height: 120px;
+  object-fit: cover;
+  top: 60%;
+  left: 48%;
+  fill: #5E17EB;
+  transform: translate(-45%, -60%);
+  font-size: 8rem;
+  transition: 0.5s ease-in-out;
+}
+
+.box:hover svg {
+  position: absolute;
+  top: 70%;
+  left: 30%;
+  width: 30px;
+  height: 30px;
+  font-size: 3rem;
+  transform: translate(90px, -160px);
+}
+
+.box .content {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: -100%;
+  transition: 0.5s ease-in-out;
+  padding: 52px 20px;
+}
+
+.box .content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(81, 62, 255, 0.2117647059);
+}
+
+.box:hover .content {
+  transform: translate(100%);
+}
+
+.box .content p {
+  font-size: 10px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
 .c-skills {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -1500,10 +1588,22 @@ main {
   cursor: pointer;
 }
 .c-glide__arrow--left {
-  left: -6rem;
+  top: 0;
+}
+@media (min-width: 48rem) {
+  .c-glide__arrow--left {
+    top: 50%;
+    left: -6rem;
+  }
 }
 .c-glide__arrow--right {
-  right: -6rem;
+  top: 0;
+}
+@media (min-width: 48rem) {
+  .c-glide__arrow--right {
+    top: 50%;
+    right: -6rem;
+  }
 }
 
 .glide__cat {
