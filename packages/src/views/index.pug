@@ -21,63 +21,63 @@ html(lang="pt-BR")
             subtitle: 'Bia',
         })  
         
-        main
-            +navigation({
-                items: [{
-                    icon: 'user',
-                    link: 'about-me',
-                    name: 'Sobre mim'
-                },
-                {
-                    icon: 'service',
-                    link: 'item2',
-                    name: 'Serviços'
-                },
-                {
-                    icon: 'code',
-                    link: 'item1',
-                    name: 'Projetos'
-                },
-                {
-                    icon: 'bulb',
-                    link: 'item0',
-                    name: 'Conhecimentos'
-                },
-                {
-                    icon: 'knowledge',
-                    link: 'item5',
-                    name: 'Qualificações'
-                },
-                {   
-                    icon: 'phone',
-                    link: 'item4',
-                    name: 'Contato'
-                }]
-            })
-            
-            //- +navigation-mobile({
-            //-     items: [{
-            //-         icon: 'user',
-            //-         link: 'about-me',
-            //-         name: 'Sobre mim'
-            //-     },
-            //-     {
-            //-         icon: 'service',
-            //-         link: 'item2',
-            //-         name: 'Serviços'
-            //-     },
-            //-     {
-            //-         icon: 'bulb',
-            //-         link: 'item0',
-            //-         name: 'Conhecimentos'
-            //-     },
-            //-     {   
-            //-         icon: 'phone',
-            //-         link: 'item4',
-            //-         name: 'Contato'
-            //-     }]
-            //- })
+        +navigation({
+            items: [{
+                icon: 'user',
+                link: 'about-me',
+                name: 'Sobre mim'
+            },
+            {
+                icon: 'service',
+                link: 'item2',
+                name: 'Serviços'
+            },
+            {
+                icon: 'code',
+                link: 'item1',
+                name: 'Projetos'
+            },
+            {
+                icon: 'bulb',
+                link: 'item0',
+                name: 'Conhecimentos'
+            },
+            {
+                icon: 'knowledge',
+                link: 'item5',
+                name: 'Qualificações'
+            },
+            {   
+                icon: 'phone',
+                link: 'item4',
+                name: 'Contato'
+            }]
+        })
 
+        +navigation-mobile({
+            items: [{
+                icon: 'user',
+                link: 'about-me',
+                name: 'Sobre mim'
+            },
+            {
+                icon: 'service',
+                link: 'item2',
+                name: 'Serviços'
+            },
+            {
+                icon: 'bulb',
+                link: 'item0',
+                name: 'Conhecimentos'
+            },
+            {   
+                icon: 'phone',
+                link: 'item4',
+                name: 'Contato'
+            }]
+        })
+        
+        main        
             .center-content
                 section(class="u-mb-40 u-mt-40" id="about-me")
                     h2(class="u-fs-32 u-color-pink u-font-weight-700 u-mb-40 u-m-0 u-text-center")
@@ -85,7 +85,7 @@ html(lang="pt-BR")
                         
                     +about-me({
                         title: 'Hello, I am Bianca Teodoro Urtado,',
-                        description: 'Tenho 21 anos e sou residente em Presidente Prudente - SP. Graduada em Análise e Desenvolvimento de Sistemas pela Instituição Toledo Prudente e trabalho como desenvolvedora front-end. Gosto de desafios e estou sempre buscando me atualizar sobre novas tecnologias.',
+                        description: 'tenho 21 anos e sou residente em Presidente Prudente - SP. Graduada em Análise e Desenvolvimento de Sistemas pela Instituição Toledo Prudente e trabalho como desenvolvedora front-end. Gosto de desafios e estou sempre buscando me atualizar sobre novas tecnologias.',
                         imageUrl: '../images/bianca.png',
                         skills: true
                     })(class="u-mb-64")
@@ -188,16 +188,31 @@ html(lang="pt-BR")
                             {
                                 name: 'pug',
                                 icon: 'pug',
-                                description: 'Assim como o SASS, o Pug é um pré processador que tem a função de ajudar a realizar tarefas repetitivas, fornecendo recursos não disponíveis no HTML, como por exemplo, iterar elementos de uma lista para criar uma tabela. E o melhor é que ele é totalmente gratuito, aberto e bem mais fácil de usar!'
+                                description: 'Assim como o SASS, o Pug é um pré processador que tem a função de ajudar a realizar tarefas repetitivas, fornecendo recursos não disponíveis no HTML, como por exemplo, iterar elementos de uma lista para criar uma tabela. E o melhor é que ele é totalmente gratuito, aberto e bem mais fácil de usar!.'
                             },
                             {
                                 name: 'github',
                                 icon: 'github',
                                 description: 'O GitHub é o maior repositório de dados compartilhado do mundo, com 28 milhões de usuários atualmente. É uma plataforma majoritariamente usada por desenvolvedores, pois permite uma hospedagem prática de código-fonte e arquivos em nuvem.'
+                            },
+                            {
+                                name: 'typescript',
+                                icon: 'typescript',
+                                description: 'TypeScript é uma linguagem de programação de código aberto desenvolvida pela Microsoft, que estende o JavaScript adicionando tipos estáticos. Ela permite detectar erros em tempo de compilação, proporcionando maior segurança e robustez ao código. TypeScript é amplamente utilizado no desenvolvimento de aplicações web e integra-se facilmente com bibliotecas e frameworks JavaScript. Sua adoção melhora a manutenção e escalabilidade dos projetos.'
+                            },
+                            {
+                                name: 'cypress',
+                                icon: 'cypress',
+                                description: 'Cypress é uma ferramenta de teste de ponta a ponta de código aberto para aplicações web, oferecendo uma experiência rápida e confiável. Ele executa testes diretamente no navegador, proporcionando visibilidade e controle precisos. Amplamente utilizado por desenvolvedores e equipes de QA, garante a qualidade das aplicações web.'
+                            },
+                            {
+                                name: 'lit',
+                                icon: 'lit',
+                                description: 'lit-html é uma biblioteca JavaScript para a criação eficiente de templates HTML dinâmicos. Ela permite a atualização reativa do DOM com sintaxe simples e desempenho otimizado. Utilizada principalmente com a biblioteca Lit, lit-html facilita a construção de interfaces web rápidas e interativas, aproveitando o poder dos templates literais do ES6.'
                             }
                         ]
                     })
-
+                    
                     //- +history({
                     //-     imageUrl: '../images/acai.jpeg'
                     //- })  

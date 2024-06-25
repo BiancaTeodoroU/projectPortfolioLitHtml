@@ -18,8 +18,16 @@ body {
 }
 
 main {
-    display: flex;
     overflow: hidden !important;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    min-height: 100vh;
+    width: 100%;
+
+    @include mediaquery(md) {
+        padding-left: 5.5rem;
+        padding-right: 5.5rem;
+    }
 }
 
 .o-container {
@@ -29,13 +37,9 @@ main {
 }
 
 .center-content {
-    flex: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    width: 100%;
-    
-    @include mediaquery(md) {
-        padding-left: 6rem;
-        padding-right: 6rem;
+
+    @include mediaquery(sm) {
+        padding-left: 5.5rem;
+        padding-right: 5.5rem;
     }
 }

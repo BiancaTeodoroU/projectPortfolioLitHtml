@@ -1,21 +1,24 @@
 .c-navigation {
-    border-right: 0.063rem solid #28293D;
-	background: #0C0D14;
-	overflow: hidden;
-	position: sticky;
-	left: 0;
-	width: 60px;
-	-webkit-transition: all 0.3s linear;
-	transition: all 0.3s linear;
-	-webkit-transform: translateZ(0) scale(1,1);
-	transform: translateZ(0) scale(1,1);
-	display: none;
-	z-index: 9999;
 	
-	@include mediaquery(sm) {
-		display: block;
+	&__nav {
+		border-right: 0.063rem solid #28293D;
+		background: #0C0D14;
+		overflow: hidden;
+		position: fixed;
+		width: 60px;
+		height: 100vh;
+		-webkit-transition: all 0.3s linear;
+		transition: all 0.3s linear;
+		-webkit-transform: translateZ(0) scale(1,1);
+		transform: translateZ(0) scale(1,1);
+		display: none;
+		z-index: 9999;
+		
+		@include mediaquery(sm) {
+			display: block;
+		}
 	}
-
+	
 	&__item {
 		&:focus {
 			border: 1px solid white;
@@ -63,6 +66,7 @@
 		&__list {
 			list-style: none;
 			display: flex;
+			flex-wrap: wrap;
 			align-items: center;
 			justify-content: space-evenly;
 			padding: 0.5rem 0.75rem;

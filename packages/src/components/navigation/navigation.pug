@@ -4,8 +4,8 @@ mixin navigation(props = {})
             items: props.items || []
         }
 
-    .c-navigation(class="u-pt-120")
-        nav 
+    .c-navigation
+        nav(class="c-navigation__nav u-pt-120")
             ul(class="c-navigation__list u-m-0")
                 each item, index in state.items
                     li(
