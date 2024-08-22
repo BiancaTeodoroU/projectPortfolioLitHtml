@@ -32,3 +32,16 @@ class Load {
 
 const loader = new Load()
 loader.mount()
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        window.scrollTo({
+            top: targetSection.offsetTop - 100, // 100 é o deslocamento para compensar a navbar
+            behavior: 'smooth'
+        });
+    });
+});

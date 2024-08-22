@@ -14,7 +14,7 @@
 		display: none;
 		z-index: 9999;
 		
-		@include mediaquery(sm) {
+		@include mediaquery(md) {
 			display: block;
 		}
 	}
@@ -59,7 +59,7 @@
     
         z-index: 99;
 		
-		@include mediaquery(sm) {
+		@include mediaquery(md) {
 			display: none;
 		}
 

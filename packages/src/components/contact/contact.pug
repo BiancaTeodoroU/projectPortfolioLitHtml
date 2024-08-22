@@ -1,0 +1,28 @@
+mixin contact(props = {})
+    .c-contact-text 
+        h2.contacts-text Vamos trabalhar juntos?
+        p.contacts-paragh(class="u-color-white u-tc")
+            | Se você gostou do meu trabalho e quer que eu tire sua ideia do papel ou
+            | faça parte do seu time, entre em contato comigo!
+    .nav-contacts
+        ul.contact
+            li(style="--i:#0e76a8;--j:#258ad377;" onclick="window.open('https://www.linkedin.com/in/bianca-teodoro-urtado-ba37a1215/')")
+                span.icon 
+                    .c-contact--icon
+                        include ./src/svg/linkedin.svg
+                span.titulo linkedin
+                li(style="--i:#c32aa3;--j:#b315917c;" onclick="window.open('https://www.instagram.com/biancateodorou/')")
+                    span.icon 
+                        .c-contact--icon
+                            include ./src/svg/instagram.svg
+                    span.titulo instagram
+            li(style="--i:rgb(94, 34, 131);--j:#b315917c;" onclick="window.open('https://github.com/BiancaTeodoroU')")
+                span.icon 
+                    .c-contact--icon
+                        include ./src/svg/github.svg
+                span.titulo github
+            li(style="--i:#C71610;--j:#b6211c;" onclick="window.open('mailto:biancaurtado645@gmail.com')")
+                span.icon
+                    .c-contact--icon 
+                        include ./src/svg/gmail.svg
+                span.titulo Gmail

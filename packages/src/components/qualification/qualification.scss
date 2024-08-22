@@ -1,0 +1,158 @@
+// Please configure the following
+$tab-border-width: 2px;
+$tab-content-width: 6ch; // this is an estimation and will break depending on the font
+$tab-padding-x: 2ch;
+$tab-padding-y: .4em;
+$tab-side-border-coefficient: 2ch;
+
+// Please don't touch these variables
+$tab-border-x-coefficient: 4;
+$tab-height: 1em + 2 * $tab-padding-y;
+$tab-width: $tab-content-width + 2 * $tab-padding-x + 2 * $tab-side-border-coefficient;
+
+// Here are the rules
+.hidden {
+    display: none;
+}
+
+.tab {
+    color: black;
+    display: block;
+    font-weight: bold;
+    height: $tab-height;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: calc(#{$tab-width} - #{$tab-border-x-coefficient} * #{$tab-border-width});
+    z-index: 1;
+    
+    &:visited {
+        color: black;
+    }
+
+    > label {
+        cursor: pointer;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.tab-bar {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    > input[name="tab-bar-item"]:checked + .tab-container {
+        margin-top: $tab-border-width;
+
+        > .trapezoid::before {
+            border-bottom: calc(#{$tab-height} + #{$tab-border-width}) solid hsl(245, 75%, 52%);
+        }
+    }
+}
+
+.tab-container {
+    margin: 0 $tab-border-width;
+    width: max-content;
+    
+    &:nth-child(2) {
+        margin-left: calc(2 * #{$tab-border-width});
+    }
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: #0C0D14;
+    border: 2px solid hsl(245, 75%, 52%);
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+
+    @include mediaquery(md) {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        justify-content: space-evenly;
+    }
+}
+
+.text2r {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: #0C0D14;
+    border: 2px solid hsl(245, 75%, 52%);
+    border-radius: 1rem;
+    padding: 2rem;
+
+    @include mediaquery(md) {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+    }
+}
+
+.texts {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
+    margin-top: -$tab-padding-y;
+}
+
+#tab-1-rb:checked ~ .texts .text1 {
+    height: max-content;
+}
+.text1 {
+    height: 0;
+    overflow: hidden;
+}
+
+#tab-2-rb:checked ~ .texts .text2 {
+    height: max-content;
+}
+.text2 {
+    height: 0;
+    overflow: hidden;
+}
+
+.trapezoid, .trapezoid::before {
+    border-bottom: $tab-height solid #0C0D14;
+    border-left: $tab-side-border-coefficient solid transparent;
+    border-right: $tab-side-border-coefficient solid transparent;
+    box-sizing: border-box;
+    display: block;
+    height: 0;
+    margin-bottom: calc(-1 * #{$tab-height} + #{$tab-padding-y});
+    padding: $tab-padding-y $tab-padding-x;
+    position: relative;
+    width: $tab-width;
+}
+
+.trapezoid::before {
+    border-bottom: calc(#{$tab-height} + 2 * #{$tab-border-width}) solid #0C0D14;
+    border-left: calc(#{$tab-side-border-coefficient} + #{$tab-border-width}) solid transparent;
+    border-right: calc(#{$tab-side-border-coefficient} + #{$tab-border-width}) solid transparent;
+    content: '';
+    left: calc(-1 * #{$tab-side-border-coefficient} - 2 * #{$tab-border-width});
+    position: absolute;
+    top: calc(-1 * #{$tab-border-width});
+    width: calc(#{$tab-width} + #{$tab-border-x-coefficient} * #{$tab-border-width});
+    z-index: -1;
+}
+
+.c-qualification {
+    &__border {
+        border-bottom: 3px solid hsl(245, 75%, 52%);
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        @include mediaquery(md) {
+            margin: 0;
+            margin-left: 2rem;
+            margin-right: 2rem;
+            border-bottom: none;
+            border-right: 3px solid hsl(245, 75%, 52%);
+        }
+    }
+}
