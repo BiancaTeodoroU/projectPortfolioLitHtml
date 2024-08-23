@@ -13,7 +13,8 @@
   "scripts": {
     "dev": "parcel ./packages/src/views/index.pug",
     "devopen": "parcel ./front-end/src/views/index.pug --open 'google chrome'",
-    "build": "babel packages/src --out-dir dist"
+    "build": "babel packages/src --out-dir dist",
+    "build-front": "./build.sh"
   },
   "repository": {
     "type": "git",
