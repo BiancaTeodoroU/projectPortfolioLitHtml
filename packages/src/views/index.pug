@@ -11,7 +11,6 @@ html(lang="pt-BR")
         script(type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js")
         script(nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js")
         script(src="https://cdn.jsdelivr.net/npm/@glidejs/glide")
-        script(src="https://cdn.tailwindcss.com")
     body
         +header({
             title: 'Front',
@@ -84,7 +83,7 @@ html(lang="pt-BR")
                     +history({
                         imageUrls: [
                             '../images/acai.jpeg',
-                            '../images/pano.jpeg',
+                            '../images/artBillie.jpeg',
                             '../images/tanjiro-nezuko.jpg',
                             '../images/frieren.webp',
                             '../images/mia-amora.jpeg',
@@ -203,18 +202,56 @@ html(lang="pt-BR")
                             }
                         ]
                     })
-                    
-                    //- +history({
-                    //-     imageUrl: '../images/acai.jpeg'
-                    //- })  
-                    
-                //- section(class="u-mb-32 u-mt-40" id="qualification")
-                    .o-container
-                        h2(class="u-fs-32 u-color-pink u-font-weight-700 u-mb-40 u-m-0 u-text-center")
-                            | Qualificação
 
-                        +qualification()
-                
+                section(class="u-mb-32 u-mt-40" id="qualification")
+                    h2(class="u-fs-32 u-color-pink u-font-weight-700 u-mb-40 u-m-0 u-text-center")
+                        | Qualificação
+
+                    .c-qualification(class="u-flex u-align-center")
+                        +qualification({
+                            id: '1',
+                            items: [
+                                {
+                                    id: '1',
+                                    titleContent: 'Educação',
+                                    date: '2021 - 2023',
+                                    title: 'Faculdade de Análise e desenvolvimento de sistemas',
+                                    description: 'centro universitário toledo prudente'
+                                },
+                                {
+                                    id: '2',
+                                    date: '2014 - 2020',
+                                    title: 'Clotilde Veiga De Barros',
+                                    description: 'Escola Estadual - Ensino Fundamental e Médio'
+                                }
+                            ]
+                        })(class="u-m-24")
+
+                        +qualification({
+                            id: '2',
+                            items: [
+                                {
+                                    id: '1',
+                                    titleContent: 'Trabalho',
+                                    date: '2021 - 2022',
+                                    title: 'Jovem Aprendiz Auxiliar de Escritório em Geral',
+                                    description: 'Security Segurança - Trabalho <br> <ul class="u-lh-24 u-m-0 u-mt-16 u-color-white u-pl-16 u-pr-16"><li>Organização de exames admissionais, periódicos e demissionais.</li><li>Agendamento de exames</li><li>Organização em planilhas de exames feitos a cada mês</li><li>Lançamento de exames nos sistemas SOC, Guardião digital e Totvs.</li><ul>'
+                                },
+                                {
+                                    id: '2',
+                                    date: '2022 - 2023',
+                                    title: 'Estágiaria em Engenharia de Software',
+                                    description: 'Foregon - Trabalho <br> <ul class="u-lh-24 u-m-0 u-mt-16 u-color-white u-pl-16 u-pr-16"><li>Criação de componentes em Pug e Lit-html</li><li>Alteração de componentes</li><li>Criação de expêrimentos utilizando featureflag</li><li>Alteração de layout de e-mail</li><li>Criação e manutenção de testes de integração e unitários com Cypress e jest</li><ul>'
+                                },
+                                {
+                                    id: '3',
+                                    date: '2024 - o momento',
+                                    title: 'Desenvolvedora Front end',
+                                    description: 'Foregon - trabalho <br> <ul class="u-lh-24 u-m-0 u-mt-16 u-color-white u-pl-16 u-pr-16"><li>Criação de componentes em Pug e Lit-html</li><li>Alteração de componentes</li><li>Criação de expêrimentos utilizando featureflag</li><li>Alteração de layout de e-mail</li><li>Criação e manutenção de testes de integração e unitários com Cypress e jest</li><ul>'
+                                }
+                            ]
+                        })(class="u-m-24")
+
                 section(class="u-mb-32 u-mt-40" id="contact")
                     h2(class="u-fs-32 u-color-pink u-font-weight-700 u-mb-40 u-m-0 u-text-center")
                         | Contato

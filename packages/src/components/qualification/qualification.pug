@@ -1,41 +1,32 @@
-mixin qualification()
-    .tab-bar
-        input#tab-1-rb.hidden(type='radio' name='tab-bar-item' checked='')
-        .tab-container
-            .trapezoid
-            a.tab(href='#')
-                label(for='tab-1-rb' class="u-color-pink") Educação
-        input#tab-2-rb.hidden(type='radio' name='tab-bar-item')
-        .tab-container
-            .trapezoid
-            a.tab(href='#')
-                label(for='tab-2-rb' class="u-color-pink") Trabalho
-        .texts
-            .text1
-                .text
-                    .text1(class="u-text-center")
-                        span(class="u-color-white u-db") Clotilde Veiga De Barros Escola Estadual 
-                        span(class="u-color-white u-db") Ensino Fundamental e Médio 
-                        date(class="u-color-white") 2014 - 2020
-                    .c-qualification__border
-                    .text2t(class="u-text-center")
-                        span(class="u-color-white u-db") Faculdade de Análise e desenvolvimento de sistemas
-                        span(class="u-color-white u-db") centro universitário toledo prudente
-                        date(class="u-color-white") 2021 - 2023
-            .text2
-                .text2r   
-                    .text2t(class="u-text-center")
-                        span(class="u-color-white u-db") Jovem Aprendiz Auxiliar de Escritório em Geral
-                        span(class="u-color-white u-db") Security Segurança - Trabalho
-                        date(class="u-color-white") fev 2021 - abr 2022
-                    .c-qualification__border
-                    .text2t(class="u-text-center")
-                        span(class="u-color-white u-db") Estágiaria em Engenharia de Software
-                        span(class="u-color-white u-db") Foregon - Trabalho
-                        date(class="u-color-white") abr de 2022 - dez de 2023
-                    .c-qualification__border
-                    .text2t(class="u-text-center")
-                        span(class="u-color-white u-db") Desenvolvedora Front end
-                        span(class="u-color-white u-db") Foregon - Trabalho
-                        date(class="u-color-white") jan de 2024 - o momento
+mixin qualification(props = {})
+    -
+        let state = {
+            id: props.id,
+            items: props.items || []
+        }
 
+    .timeline(id=`timeline${state.id}`)&attributes(attributes)
+        div.btn-group
+            button.btn(type="button" data-action="expand") Abrir todos
+            button.btn(type="button" data-action="collapse") Fechar todos
+        .u-flex(class="u-align-center u-justify-center u-flex-wrap")
+            .qualification
+                each item, index in state.items
+                    if item.titleContent
+                        h1(class="u-color-white u-m-0 u-fs-24 u-mb-32 u-text-center") 
+                            =item.titleContent
+                    .timeline__item(class= index === state.items.length - 1 ? '' : 'u-mb-24')
+                        .timeline__item-header
+                            button(class="timeline__arrow" type="button" id=`item${item.id}` aria-labelledby=`item${item.id}-name` aria-expanded="false" aria-controls=`item${item.id}-ctrld` aria-haspopup="true" data-item=item.id)
+                                .timeline__arrow-icon
+                                    include ./src/svg/arrow-right.svg
+                            span#item1-name.timeline__meta
+                                time.timeline__date(class="u-color-white" datetime="1970-01-01") 
+                                    =item.date
+                                br
+                                strong(class="timeline__title u-color-purple u-color-white") 
+                                    =item.title
+                        div.timeline__item-body(role="region" aria-labelledby=`item${item.id}` aria-hidden="true" id=`item${item.id}-ctrld`)
+                            div.timeline__item-body-content
+                                p.timeline__item-p(class="u-color-white u-m-0")
+                                    !=item.description

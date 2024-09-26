@@ -1,0 +1,16 @@
+# Ignorar a pasta de distribuição de arquivos
+dist/
+
+# Ignorar arquivos CSS gerados pela compilação Sass
+packages/src/styles/*.css
+
+# Ignorar outros arquivos compilados
+*.html
+*.css
+*.js
+
+# Ignorar pacotes e módulos
+node_modules/
+
+# Ignorar arquivos de cache do parcel
+.cache/

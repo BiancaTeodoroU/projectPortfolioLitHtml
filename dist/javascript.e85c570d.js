@@ -173,6 +173,87 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  var timelines = document.querySelectorAll('[id^="timeline"]');
+  timelines.forEach(function (timeline) {
+    new CollapsibleTimeline("#".concat(timeline.id));
+  });
+});
+var CollapsibleTimeline = /*#__PURE__*/function () {
+  function CollapsibleTimeline(el) {
+    _classCallCheck(this, CollapsibleTimeline);
+    this.el = document.querySelector(el);
+    this.init();
+  }
+  return _createClass(CollapsibleTimeline, [{
+    key: "init",
+    value: function init() {
+      var _this$el;
+      (_this$el = this.el) === null || _this$el === void 0 || _this$el.addEventListener("click", this.itemAction.bind(this));
+    }
+  }, {
+    key: "animateItemAction",
+    value: function animateItemAction(button, ctrld, contentHeight, shouldCollapse) {
+      var expandedClass = "timeline__item-body--expanded";
+      var animOptions = {
+        duration: 300,
+        easing: "cubic-bezier(0.65,0,0.35,1)"
+      };
+      if (shouldCollapse) {
+        button.ariaExpanded = "false";
+        ctrld.ariaHidden = "true";
+        ctrld.classList.remove(expandedClass);
+        animOptions.duration *= 2;
+        this.animation = ctrld.animate([{
+          height: "".concat(contentHeight, "px")
+        }, {
+          height: "".concat(contentHeight, "px")
+        }, {
+          height: "0px"
+        }], animOptions);
+      } else {
+        button.ariaExpanded = "true";
+        ctrld.ariaHidden = "false";
+        ctrld.classList.add(expandedClass);
+        this.animation = ctrld.animate([{
+          height: "0px"
+        }, {
+          height: "".concat(contentHeight, "px")
+        }], animOptions);
+      }
+    }
+  }, {
+    key: "itemAction",
+    value: function itemAction(e) {
+      var target = e.target;
+      var action = target === null || target === void 0 ? void 0 : target.getAttribute("data-action");
+      var item = target === null || target === void 0 ? void 0 : target.getAttribute("data-item");
+      if (action) {
+        var _this$el2;
+        var targetExpanded = action === "expand" ? "false" : "true";
+        var buttons = Array.from((_this$el2 = this.el) === null || _this$el2 === void 0 ? void 0 : _this$el2.querySelectorAll("[aria-expanded=\"".concat(targetExpanded, "\"]")));
+        var wasExpanded = action === "collapse";
+        for (var _i = 0, _buttons = buttons; _i < _buttons.length; _i++) {
+          var _this$el3, _ctrld$firstElementCh;
+          var button = _buttons[_i];
+          var buttonID = button.getAttribute("data-item");
+          var ctrld = (_this$el3 = this.el) === null || _this$el3 === void 0 ? void 0 : _this$el3.querySelector("#item".concat(buttonID, "-ctrld"));
+          var contentHeight = (_ctrld$firstElementCh = ctrld.firstElementChild) === null || _ctrld$firstElementCh === void 0 ? void 0 : _ctrld$firstElementCh.offsetHeight;
+          this.animateItemAction(button, ctrld, contentHeight, wasExpanded);
+        }
+      } else if (item) {
+        var _this$el4, _this$el5, _ctrld$firstElementCh2;
+        var _button = (_this$el4 = this.el) === null || _this$el4 === void 0 ? void 0 : _this$el4.querySelector("[data-item=\"".concat(item, "\"]"));
+        var expanded = _button === null || _button === void 0 ? void 0 : _button.getAttribute("aria-expanded");
+        if (!expanded) return;
+        var _wasExpanded = expanded === "true";
+        var _ctrld = (_this$el5 = this.el) === null || _this$el5 === void 0 ? void 0 : _this$el5.querySelector("#item".concat(item, "-ctrld"));
+        var _contentHeight = (_ctrld$firstElementCh2 = _ctrld.firstElementChild) === null || _ctrld$firstElementCh2 === void 0 ? void 0 : _ctrld$firstElementCh2.offsetHeight;
+        this.animateItemAction(_button, _ctrld, _contentHeight, _wasExpanded);
+      }
+    }
+  }]);
+}();
 },{}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -198,7 +279,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35517" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "32975" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
