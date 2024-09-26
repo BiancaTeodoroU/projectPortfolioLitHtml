@@ -66,6 +66,14 @@
     overflow: hidden;
 }
 
+.u-flex-colunm-row-sm {
+	flex-direction: column;
+	@include mediaquery(sm) {
+		flex-direction: row;
+	}
+}
+
+
 // .o-row {
 //     display: grid;
 //     grid-template-columns: repeat(1, 1fr);

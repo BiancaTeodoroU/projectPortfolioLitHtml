@@ -5,28 +5,28 @@ mixin qualification(props = {})
             items: props.items || []
         }
 
-    .timeline(id=`timeline${state.id}`)&attributes(attributes)
-        div.btn-group
-            button.btn(type="button" data-action="expand") Abrir todos
-            button.btn(type="button" data-action="collapse") Fechar todos
+    .c-qualification(id=`timeline${state.id}`)&attributes(attributes)
+        .c-qualification__btn-group
+            button(class="c-qualification__btn" type="button" data-action="expand") Abrir todos
+            button(class="c-qualification__btn" type="button" data-action="collapse") Fechar todos
         .u-flex(class="u-align-center u-justify-center u-flex-wrap")
-            .qualification
+            .c-qualification__content
                 each item, index in state.items
                     if item.titleContent
                         h1(class="u-color-white u-m-0 u-fs-24 u-mb-32 u-text-center") 
                             =item.titleContent
-                    .timeline__item(class= index === state.items.length - 1 ? '' : 'u-mb-24')
-                        .timeline__item-header
-                            button(class="timeline__arrow" type="button" id=`item${item.id}` aria-labelledby=`item${item.id}-name` aria-expanded="false" aria-controls=`item${item.id}-ctrld` aria-haspopup="true" data-item=item.id)
-                                .timeline__arrow-icon
+                    .c-qualification__item(class= index === state.items.length - 1 ? '' : 'u-mb-24')
+                        .c-qualification__item-header
+                            button(class="c-qualification__arrow" type="button" id=`item${item.id}` aria-labelledby=`item${item.id}-name` aria-expanded="false" aria-controls=`item${item.id}-ctrld` aria-haspopup="true" data-item=item.id)
+                                .c-qualification__arrow-icon
                                     include ./src/svg/arrow-right.svg
-                            span#item1-name.timeline__meta
-                                time.timeline__date(class="u-color-white" datetime="1970-01-01") 
+                            span(class="c-qualification__meta")
+                                time(class="c-qualification__date u-color-white" datetime="1970-01-01") 
                                     =item.date
                                 br
-                                strong(class="timeline__title u-color-purple u-color-white") 
+                                strong(class="c-qualification__title u-color-purple u-color-white") 
                                     =item.title
-                        div.timeline__item-body(role="region" aria-labelledby=`item${item.id}` aria-hidden="true" id=`item${item.id}-ctrld`)
-                            div.timeline__item-body-content
-                                p.timeline__item-p(class="u-color-white u-m-0")
+                        .c-qualification__item-body(role="region" aria-labelledby=`item${item.id}` aria-hidden="true" id=`item${item.id}-ctrld`)
+                            .c-qualification__item-body-content
+                                p(class="timeline__item-p u-color-white u-m-0")
                                     !=item.description

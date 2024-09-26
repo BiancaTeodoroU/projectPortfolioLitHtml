@@ -194,7 +194,7 @@ var CollapsibleTimeline = /*#__PURE__*/function () {
   }, {
     key: "animateItemAction",
     value: function animateItemAction(button, ctrld, contentHeight, shouldCollapse) {
-      var expandedClass = "timeline__item-body--expanded";
+      var expandedClass = "c-qualification__item-body--expanded";
       var animOptions = {
         duration: 300,
         easing: "cubic-bezier(0.65,0,0.35,1)"
@@ -279,7 +279,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "32975" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42937" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

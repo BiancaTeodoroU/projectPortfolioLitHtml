@@ -64,7 +64,7 @@ class CollapsibleTimeline {
 		this.el?.addEventListener("click",this.itemAction.bind(this));
 	}
 	animateItemAction(button,ctrld,contentHeight,shouldCollapse) {
-		const expandedClass = "timeline__item-body--expanded";
+		const expandedClass = "c-qualification__item-body--expanded";
 		const animOptions = {
 			duration: 300,
 			easing: "cubic-bezier(0.65,0,0.35,1)"
