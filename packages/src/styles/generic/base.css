@@ -1,1 +1,43 @@
-html{font-size:1rem;font-family:"Red Hat Display",sans-serif}body{margin:0;padding:0;background-color:var(--black-body);overflow-x:hidden !important}:root{--black-body: #0C0D14}main{overflow:hidden !important;padding-left:1.5rem;padding-right:1.5rem;min-height:100vh;width:100%}@media(min-width: 64rem){main{padding-left:5.5rem;padding-right:5.5rem}}.o-container{max-width:768px;margin-left:1.5rem;margin-right:1.5rem}@media(min-width: 48rem){.center-content{padding-left:5.5rem;padding-right:5.5rem}}
+html {
+  font-size: 1rem;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--black-body);
+  overflow-x: hidden !important;
+}
+
+:root {
+  /*=== Background ===*/
+  --black-body: #0C0D14;
+}
+
+main {
+  overflow: hidden !important;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  min-height: 100vh;
+  width: 100%;
+}
+@media (min-width: 64rem) {
+  main {
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
+  }
+}
+
+.o-container {
+  max-width: 768px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+@media (min-width: 48rem) {
+  .center-content {
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
+  }
+}/*# sourceMappingURL=base.css.map */
