@@ -12,7 +12,7 @@ Este é um projeto de listagem de usuários, utilizando NodeJS, parcel-bundler, 
 ### Como instalar o projeto e inicializar a aplicação
 Você pode usar 2 formas para instalar, a primeira com o git clone
 
-    git clone git@github.com:BiancaTeodoroU/pprojectPortfolioPug.git
+    git clone git@github.com:BiancaTeodoroU/projectPortfolioPug.git
 
 ### para iniciar o servidor usar o comando
 
