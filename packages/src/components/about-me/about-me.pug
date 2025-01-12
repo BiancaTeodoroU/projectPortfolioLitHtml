@@ -13,7 +13,7 @@ mixin about-me(props = {})
                 h3(class="u-m-0 u-fs-28 u-font-weight-700 u-color-dark-blue-100 s-load-title")
                     =state.title
                 
-                span(class="u-fs-18 u-color-white u-mb-16 u-font-weight-400")
+                span(class="u-fs-18 u-color-white u-mb-16 u-font-weight-400 u-lh-24")
                     =state.description
 
             if state.skills
@@ -29,8 +29,24 @@ mixin about-me(props = {})
                     {
                         icon: 'rocket',
                         title: 'Proatividade para assumir novas responsabilidades'
-                    }] 
+                    },
+                    {
+                        icon: 'rocket',
+                        title: 'Vivência com uma aplicação desde o desenvolvimento e produção'
+                    },
+                    {
+                        icon: 'rocket',
+                        title: 'Capacidade de garantir a qualidade de produtos através de testes automatizados utilizando cypress e jest.'
+                    },
+                    {
+                        icon: 'rocket',
+                        title: 'Consumo de APIs'
+                    },
+                    {
+                        icon: 'rocket',
+                        title: 'Gerenciamento de pacotes e dependências com NPM'
+                    },]
                 })
         
         .c-about-me__image 
-            img(class="c-about-me__image" src=`${state.imageUrl}` alt="")
+            img(class="c-about-me__image" src=`${state.imageUrl}` loading="lazy" alt="")

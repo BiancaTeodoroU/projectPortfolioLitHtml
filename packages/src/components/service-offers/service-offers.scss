@@ -10,6 +10,10 @@
         }
     }
     &__card {
+        @include mediaquery(sm) {
+            width: 100%;
+        }
+
         height: auto;
         padding: 2em 1.5em;
         background: linear-gradient(#2f303438 50%, #348bee 50%);

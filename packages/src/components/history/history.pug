@@ -13,7 +13,7 @@ mixin history(props = {})
                     class={'c-history__image--rotate-right-3' : index === 3}
                     class={'c-history__image--rotate-right-5' : index === 5}
                 )
-                    img(class="c-history__image" src=`${imageUrl}` alt="")
+                    img(class="c-history__image" src=`${imageUrl}` loading="lazy" alt="")
         
         .c-history__content
             h2(class="u-fs-32 u-color-pink u-font-weight-700 u-mb-24 u-m-0 u-text-center")

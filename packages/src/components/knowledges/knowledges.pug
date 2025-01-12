@@ -27,7 +27,17 @@ mixin knowledges(props = {})
                             when 'lit'
                                 include ./src/svg/lit.svg
                             when 'cypress'
-                                include ./src/svg/cypress.svg           
+                                include ./src/svg/cypress.svg
+                            when 'jest'
+                                include ./src/svg/Jest.svg     
+                            when 'figma'
+                                include ./src/svg/figma.svg
+                            when 'postman'
+                                include ./src/svg/postman.svg
+                            when 'mongodb'
+                                include ./src/svg/mongodb.svg
+                            when 'react'
+                                include ./src/svg/react.svg
                     .content
                         h2(class="u-text-center u-mb-24")
                             =item.name

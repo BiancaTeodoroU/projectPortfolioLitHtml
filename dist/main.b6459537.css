@@ -1436,7 +1436,7 @@ main {
 }
 @media (min-width: 64rem) {
   .c-knowledges--grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 .c-knowledges__icon {
@@ -1498,7 +1498,7 @@ main {
   background: rgba(255, 0, 81, 0.568627451);
   border: none;
   box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
-  height: 105px;
+  height: 120px;
   transition: all 400ms ease;
   padding: 0.5rem;
   font-size: 14px;
@@ -1609,6 +1609,11 @@ main {
   border-radius: 1rem;
   box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.185) -6px -2px 16px 0px;
   cursor: pointer;
+}
+@media (min-width: 48rem) {
+  .c-service-offers__card {
+    width: 100%;
+  }
 }
 .c-service-offers__card-icon {
   width: 3rem;
@@ -2017,20 +2022,6 @@ main {
   text-align: center;
 }
 
-.btn {
-  background-color: var(--fg);
-  margin: 0.625rem;
-  font-size: 1rem;
-  border-radius: 0.25em;
-  border: none;
-  color: var(--bg);
-  cursor: pointer;
-  padding: 0.375em 0.75em;
-  transition: background-color calc(var(--trans-dur) / 2) linear, color var(--trans-dur);
-  -webkit-tap-highlight-color: transparent;
-  box-shadow: hsl(245, 75%, 52%) 0px 1px 4px, hsl(245, 75%, 52%) 0px 0px 0px 3px;
-}
-
 .btn:hover {
   background-color: hsl(var(--hue), 10%, 50%);
 }
@@ -2042,12 +2033,12 @@ main {
   border-radius: 1rem;
 }
 .c-qualification__btn {
-  background-color: var(--fg);
+  background-color: #0C0D14;
   margin: 0.625rem;
   font-size: 1rem;
   border-radius: 0.25em;
   border: none;
-  color: var(--bg);
+  color: #DEDEEA;
   cursor: pointer;
   padding: 0.375em 0.75em;
   transition: background-color calc(var(--trans-dur) / 2) linear, color var(--trans-dur);

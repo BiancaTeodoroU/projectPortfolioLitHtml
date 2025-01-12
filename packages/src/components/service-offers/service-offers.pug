@@ -7,7 +7,7 @@ mixin service-offers(props = {})
     .c-service-offers(class="o-row u-justify-center")
         .c-service-offers__grid(class="u-flex u-justify-center o-col-md-10")
             each card in state.items
-                .c-service-offers__card(class="o-col o-col-sm-5 u-flex u-align-center u-flex-column u-m-16")
+                .c-service-offers__card(class="u-flex u-align-center u-flex-column u-m-16")
                     .c-service-offers__card-icon
                         case card.icon 
                             when 'laptop'
@@ -19,5 +19,5 @@ mixin service-offers(props = {})
                         h2(class="c-service-offers__card--title u-fs-24 u-color-dark-blue-100 u-m-0 u-mb-16 u-mt-8")
                             =card.title
                         
-                        span(class="u-fs-18 u-color-white")
+                        span(class="u-fs-14 u-color-white")
                             =card.description

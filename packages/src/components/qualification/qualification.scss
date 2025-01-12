@@ -19,22 +19,6 @@
     text-align: center;
 }
 
-.btn {
-	background-color: var(--fg);
-    margin: .625rem;
-    font-size: 1rem;
-	border-radius: 0.25em;
-    border: none;
-	color: var(--bg);
-	cursor: pointer;
-	padding: 0.375em 0.75em;
-	transition:
-		background-color calc(var(--trans-dur) / 2) linear,
-		color var(--trans-dur);
-	-webkit-tap-highlight-color: transparent;
-    box-shadow: hsl(245, 75%, 52%) 0px 1px 4px, hsl(245, 75%, 52%) 0px 0px 0px 3px;
-}
-
 .btn:hover {
 	background-color: hsl(var(--hue),10%,50%);
 }
@@ -46,12 +30,12 @@
 	border-radius: 1rem;
 
 	&__btn {
-		background-color: var(--fg);
+		background-color: #0C0D14;
 		margin: .625rem;
 		font-size: 1rem;
 		border-radius: 0.25em;
 		border: none;
-		color: var(--bg);
+		color: #DEDEEA;
 		cursor: pointer;
 		padding: 0.375em 0.75em;
 		transition:

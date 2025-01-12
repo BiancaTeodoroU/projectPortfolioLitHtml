@@ -15,8 +15,8 @@ html(lang="pt-BR")
         +header({
             title: 'Front',
             subtitle: 'Bia',
-        })  
-        
+        })
+
         +navigation({
             items: [{
                 icon: 'user',
@@ -38,7 +38,7 @@ html(lang="pt-BR")
                 icon: 'knowledge',
                 link: 'qualification'
             },
-            {   
+            {
                 icon: 'phone',
                 link: 'contact'
             }]
@@ -75,21 +75,10 @@ html(lang="pt-BR")
                         
                     +about-me({
                         title: 'Hello, I am Bianca Teodoro Urtado,',
-                        description: 'tenho 21 anos e sou residente em Presidente Prudente - SP. Graduada em Análise e Desenvolvimento de Sistemas pela Instituição Toledo Prudente e trabalho como desenvolvedora front-end. Gosto de desafios e estou sempre buscando me atualizar sobre novas tecnologias.',
+                        description: 'tenho 21 anos e sou residente em Presidente Prudente - SP. Graduada em Análise e Desenvolvimento de Sistemas pela Instituição Toledo Prudente e trabalho como Desenvolvedora. Tenho experiência de quase 3 anos com desenvolvimento front end, além de proficiência para atuar como full stack. sou movida a desafios e inovação, buscando me manter sempre atualizada sobre novas tecnologias.',
                         imageUrl: '../images/bianca.png',
                         skills: true
                     })(class="u-mb-64")
-                    
-                    +history({
-                        imageUrls: [
-                            '../images/acai.jpeg',
-                            '../images/artBillie.jpeg',
-                            '../images/tanjiro-nezuko.jpg',
-                            '../images/frieren.webp',
-                            '../images/mia-amora.jpeg',
-                            '../images/pizza.jpeg',
-                        ]
-                    })
                 
                 section(class="u-mb-64 u-mt-64" id="service-offers")
                     h2(class="u-fs-32 u-color-pink u-font-weight-700 u-mb-40 u-m-0 u-text-center")
@@ -99,8 +88,13 @@ html(lang="pt-BR")
                         items: [
                             { 
                                 icon: 'laptop',
-                                title: 'Desenvolvimento de sites',
-                                description: 'Maximize a presença online da sua empresa com um site empresarial de alto impacto! Seja facilmente encontrado pelos seus clientes em potencial. Aumente sua visibilidade, expanda seu alcance e impulsione seus negócios. Vamos construir juntos o caminho para o sucesso online da sua empresa!.'
+                                title: 'Desenvolvimento Front-end',
+                                description: 'Desenvolvimento front-end avançado com foco em aplicações web dinâmicas e modernas, utilizando React, Next.js e Lit-html. Criação de interfaces escaláveis, sistemas de design personalizados, e otimização de código com Pug, SCSS, e boas práticas de performance e acessibilidade. Domínio em testes unitários e de integração com Jest e Cypress, garantindo alta qualidade e confiabilidade do código. Ideal para projetos robustos, como dashboards, e-commerces e plataformas interativas.'
+                            },
+                            { 
+                                icon: 'laptop',
+                                title: 'Desenvolvimento Full-Stack',
+                                description: 'Desenvolvimento full stack para aplicações web completas, unindo front-end moderno com back-end eficiente. No front-end, utilização de React, Next.js e Lit-html para criar interfaces interativas e responsivas. No back-end, integração com bancos de dados como MySQL, MongoDB e Firebase, além de APIs RESTful otimizadas e testadas com Postman. Ferramentas como XAMPP e MySQL Workbench são empregadas para gerenciar servidores e bancos de dados. Domínio em testes unitários e de integração com Jest e Cypress, garantindo a confiabilidade de todo o sistema. Ideal para projetos completos, como sistemas de gerenciamento, e-commerces e plataformas integradas.'
                             },
                             { 
                                 icon: 'palette',
@@ -110,7 +104,7 @@ html(lang="pt-BR")
                         ]
                     })
 
-                section(class="u-mb-32 u-mt-40" id="projects")
+                section(class="u-mb-64 u-mt-64" id="projects")
                     h2(class="u-fs-32 u-color-pink u-font-weight-700 u-mb-40 u-m-0 u-text-center")
                         | Projetos 
                     
@@ -149,7 +143,7 @@ html(lang="pt-BR")
                         ]
                     })
 
-                section(class="u-mb-32 u-mt-40" id="knowledges")
+                section(class="u-mb-64 u-mt-64" id="knowledges")
                     h2(class="u-fs-32 u-color-pink u-font-weight-700 u-mb-40 u-m-0 u-text-center")
                         | Conhecimentos
 
@@ -181,14 +175,19 @@ html(lang="pt-BR")
                                 description: 'Assim como o SASS, o Pug é um pré processador que tem a função de ajudar a realizar tarefas repetitivas, fornecendo recursos não disponíveis no HTML, como por exemplo, iterar elementos de uma lista para criar uma tabela. E o melhor é que ele é totalmente gratuito, aberto e bem mais fácil de usar!.'
                             },
                             {
-                                name: 'github',
-                                icon: 'github',
-                                description: 'O GitHub é o maior repositório de dados compartilhado do mundo, com 28 milhões de usuários atualmente. É uma plataforma majoritariamente usada por desenvolvedores, pois permite uma hospedagem prática de código-fonte e arquivos em nuvem.'
-                            },
-                            {
                                 name: 'typescript',
                                 icon: 'typescript',
                                 description: 'TypeScript é uma linguagem de programação de código aberto desenvolvida pela Microsoft, que estende o JavaScript adicionando tipos estáticos. Ela permite detectar erros em tempo de compilação, proporcionando maior segurança e robustez ao código. TypeScript é amplamente utilizado no desenvolvimento de aplicações web e integra-se facilmente com bibliotecas e frameworks JavaScript. Sua adoção melhora a manutenção e escalabilidade dos projetos.'
+                            },
+                            {
+                                name: 'lit',
+                                icon: 'lit',
+                                description: 'lit-html é uma biblioteca JavaScript para a criação eficiente de templates HTML dinâmicos. Ela permite a atualização reativa do DOM com sintaxe simples e desempenho otimizado. Utilizada principalmente com a biblioteca Lit, lit-html facilita a construção de interfaces web rápidas e interativas, aproveitando o poder dos templates literais do ES6.'
+                            },
+                            {
+                                name: 'react',
+                                icon: 'react',
+                                description: 'O React é uma biblioteca front-end JavaScript de código aberto com foco em criar interfaces de usuário em páginas web.'
                             },
                             {
                                 name: 'cypress',
@@ -196,14 +195,34 @@ html(lang="pt-BR")
                                 description: 'Cypress é uma ferramenta de teste de ponta a ponta de código aberto para aplicações web, oferecendo uma experiência rápida e confiável. Ele executa testes diretamente no navegador, proporcionando visibilidade e controle precisos. Amplamente utilizado por desenvolvedores e equipes de QA, garante a qualidade das aplicações web.'
                             },
                             {
-                                name: 'lit',
-                                icon: 'lit',
-                                description: 'lit-html é uma biblioteca JavaScript para a criação eficiente de templates HTML dinâmicos. Ela permite a atualização reativa do DOM com sintaxe simples e desempenho otimizado. Utilizada principalmente com a biblioteca Lit, lit-html facilita a construção de interfaces web rápidas e interativas, aproveitando o poder dos templates literais do ES6.'
+                                name: 'jest',
+                                icon: 'jest',
+                                description: 'Jest é uma estrutura de teste de JavaScript projetada para garantir a correção de qualquer base de código JavaScript. Ele permite que você escreva testes com uma API acessível, familiar e rica em recursos que fornece resultados rapidamente. O Jest é bem documentado, requer pouca configuração e pode ser estendido para atender às suas necessidades.'
+                            },
+                            {
+                                name: 'github',
+                                icon: 'github',
+                                description: 'O GitHub é o maior repositório de dados compartilhado do mundo, com 28 milhões de usuários atualmente. É uma plataforma majoritariamente usada por desenvolvedores, pois permite uma hospedagem prática de código-fonte e arquivos em nuvem.'
+                            },
+                            {
+                                name: 'figma',
+                                icon: 'figma',
+                                description: 'Figma é um editor gráfico de vetor e prototipagem de projetos de design baseado principalmente no navegador web, com ferramentas offline adicionais para aplicações desktop para GNU/Linux, macOS e Windows.'
+                            },
+                            {
+                                name: 'mongodb',
+                                icon: 'mongodb',
+                                description: 'MongoDB é um software de banco de dados orientado a documentos livre, de código aberto e multiplataforma, escrito na linguagem C++. Classificado como um programa de banco de dados NoSQL, o MongoDB usa documentos semelhantes a JSON com esquemas.'
+                            },
+                            {
+                                name: 'postman',
+                                icon: 'postman',
+                                description: 'Postman é uma empresa global de software de origem indiana que oferece uma plataforma de API para desenvolvedores projetarem, construírem, testarem e colaborarem em APIs. Mais de 30 milhões de usuários registrados e 500.000 organizações usam o Postman.'
                             }
                         ]
                     })
 
-                section(class="u-mb-32 u-mt-40" id="qualification")
+                section(class="u-mb-64 u-mt-64" id="qualification")
                     h2(class="u-fs-32 u-color-pink u-font-weight-700 u-mb-40 u-m-0 u-text-center")
                         | Qualificação
 
@@ -245,13 +264,24 @@ html(lang="pt-BR")
                                 },
                                 {
                                     id: '3',
-                                    date: '2024 - o momento',
+                                    date: '2024 - 2025',
                                     title: 'Desenvolvedora Front end',
-                                    description: 'Foregon - trabalho <br> <ul class="u-lh-24 u-m-0 u-mt-16 u-color-white u-pl-16 u-pr-16"><li>Criação de componentes em Pug e Lit-html</li><li>Alteração de componentes</li><li>Criação de expêrimentos utilizando featureflag</li><li>Alteração de layout de e-mail</li><li>Criação e manutenção de testes de integração e unitários com Cypress e jest</li><ul>'
+                                    description: 'Foregon - trabalho <br> <ul class="u-lh-24 u-m-0 u-mt-16 u-color-white u-pl-16 u-pr-16"><li>Criação de componentes em Pug e Lit-html</li><li>Alteração de componentes</li><li>Criação de expêrimentos utilizando featureflag</li><li>Alteração de layout de e-mail</li><li>Javascript, typescript, pug, mongoDB, e lit-html</li><li>Criação e manutenção de testes de integração e unitários com Cypress e jest</li><ul>'
                                 }
                             ]
                         })(class="u-m-24")
-
+                
+                section(class="u-mb-64 u-mt-64")
+                    +history({
+                        imageUrls: [
+                            '../images/acai.jpeg',
+                            '../images/lana-del-rey.jpeg',
+                            '../images/tanjiro-nezuko.jpg',
+                            '../images/frieren-and-himmel.jpeg',
+                            '../images/mia-amora.jpeg',
+                            '../images/pizza.jpeg',
+                        ]
+                    })
                 section(class="u-mb-32 u-mt-40" id="contact")
                     h2(class="u-fs-32 u-color-pink u-font-weight-700 u-mb-40 u-m-0 u-text-center")
                         | Contato
